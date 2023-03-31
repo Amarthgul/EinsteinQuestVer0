@@ -35,6 +35,24 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""KeyboardMovement"",
+                    ""type"": ""Button"",
+                    ""id"": ""c0048adf-145a-4858-83ca-fa7aab96c591"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""New action"",
+                    ""type"": ""Button"",
+                    ""id"": ""ef69a9fa-13e8-46a3-b84a-2c94e5c13f23"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -46,6 +64,28 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""JoystickMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""96223719-3ef8-49b4-a6b5-361af0a08457"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""KeyboardMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cc0714d3-59d2-45a6-a264-ad9e6afbebf0"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""New action"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -85,6 +125,8 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         // Player1
         m_Player1 = asset.FindActionMap("Player1", throwIfNotFound: true);
         m_Player1_JoystickMovement = m_Player1.FindAction("JoystickMovement", throwIfNotFound: true);
+        m_Player1_KeyboardMovement = m_Player1.FindAction("KeyboardMovement", throwIfNotFound: true);
+        m_Player1_Newaction = m_Player1.FindAction("New action", throwIfNotFound: true);
         // Global
         m_Global = asset.FindActionMap("Global", throwIfNotFound: true);
         m_Global_Quit = m_Global.FindAction("Quit", throwIfNotFound: true);
@@ -148,11 +190,15 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Player1;
     private IPlayer1Actions m_Player1ActionsCallbackInterface;
     private readonly InputAction m_Player1_JoystickMovement;
+    private readonly InputAction m_Player1_KeyboardMovement;
+    private readonly InputAction m_Player1_Newaction;
     public struct Player1Actions
     {
         private @PlayerInput m_Wrapper;
         public Player1Actions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @JoystickMovement => m_Wrapper.m_Player1_JoystickMovement;
+        public InputAction @KeyboardMovement => m_Wrapper.m_Player1_KeyboardMovement;
+        public InputAction @Newaction => m_Wrapper.m_Player1_Newaction;
         public InputActionMap Get() { return m_Wrapper.m_Player1; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -165,6 +211,12 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @JoystickMovement.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnJoystickMovement;
                 @JoystickMovement.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnJoystickMovement;
                 @JoystickMovement.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnJoystickMovement;
+                @KeyboardMovement.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnKeyboardMovement;
+                @KeyboardMovement.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnKeyboardMovement;
+                @KeyboardMovement.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnKeyboardMovement;
+                @Newaction.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnNewaction;
+                @Newaction.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnNewaction;
+                @Newaction.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnNewaction;
             }
             m_Wrapper.m_Player1ActionsCallbackInterface = instance;
             if (instance != null)
@@ -172,6 +224,12 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @JoystickMovement.started += instance.OnJoystickMovement;
                 @JoystickMovement.performed += instance.OnJoystickMovement;
                 @JoystickMovement.canceled += instance.OnJoystickMovement;
+                @KeyboardMovement.started += instance.OnKeyboardMovement;
+                @KeyboardMovement.performed += instance.OnKeyboardMovement;
+                @KeyboardMovement.canceled += instance.OnKeyboardMovement;
+                @Newaction.started += instance.OnNewaction;
+                @Newaction.performed += instance.OnNewaction;
+                @Newaction.canceled += instance.OnNewaction;
             }
         }
     }
@@ -212,6 +270,8 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     public interface IPlayer1Actions
     {
         void OnJoystickMovement(InputAction.CallbackContext context);
+        void OnKeyboardMovement(InputAction.CallbackContext context);
+        void OnNewaction(InputAction.CallbackContext context);
     }
     public interface IGlobalActions
     {

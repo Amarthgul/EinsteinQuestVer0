@@ -58,8 +58,12 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\_GUI.cs" />
     <Compile Include="Assets\Inputs\PlayerInput.cs" />
+    <Compile Include="Assets\Scripts\Globals.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Squirrel\SquirrelMovement.cs" />
     <Compile Include="Assets\Scripts\InputManager.cs" />
+    <Compile Include="Assets\Scripts\Acorn\Acorn.cs" />
+    <Compile Include="Assets\Scripts\CutScenePlayer.cs" />
     <Compile Include="Assets\Scripts\QuitHandler.cs" />
   </ItemGroup>
   <ItemGroup>

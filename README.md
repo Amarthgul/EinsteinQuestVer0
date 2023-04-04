@@ -12,3 +12,6 @@ Game for COSI event.
 * The game includes 2 additional packages: `Input System` (1.4.1) and 
   `Universal RP` (12.1.10). 
 
+## Version Control
+
+* TBD

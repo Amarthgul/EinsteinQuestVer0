@@ -22,15 +22,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "New action",
-                    "type": "Button",
-                    "id": "ef69a9fa-13e8-46a3-b84a-2c94e5c13f23",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -48,7 +39,7 @@
                 {
                     "name": "",
                     "id": "96223719-3ef8-49b4-a6b5-361af0a08457",
-                    "path": "",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -58,12 +49,34 @@
                 },
                 {
                     "name": "",
-                    "id": "cc0714d3-59d2-45a6-a264-ad9e6afbebf0",
-                    "path": "",
+                    "id": "efe45fa9-a89f-428f-8550-9bf2ee403f4b",
+                    "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "KeyboardMovement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4ec56922-af19-415b-bebc-8fed07e7d5c8",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "KeyboardMovement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "605577a4-672e-4236-b710-3188706d7e00",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "KeyboardMovement",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

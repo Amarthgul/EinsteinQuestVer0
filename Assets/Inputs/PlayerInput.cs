@@ -44,6 +44,15 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Observe"",
+                    ""type"": ""Button"",
+                    ""id"": ""cf2127c5-53c2-4c28-b578-b8e179872fbf"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -101,6 +110,17 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""action"": ""KeyboardMovement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""49f04d44-e2ed-4588-926d-7c1f67897f34"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Observe"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -139,6 +159,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         m_Player1 = asset.FindActionMap("Player1", throwIfNotFound: true);
         m_Player1_JoystickMovement = m_Player1.FindAction("JoystickMovement", throwIfNotFound: true);
         m_Player1_KeyboardMovement = m_Player1.FindAction("KeyboardMovement", throwIfNotFound: true);
+        m_Player1_Observe = m_Player1.FindAction("Observe", throwIfNotFound: true);
         // Global
         m_Global = asset.FindActionMap("Global", throwIfNotFound: true);
         m_Global_Quit = m_Global.FindAction("Quit", throwIfNotFound: true);
@@ -203,12 +224,14 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     private IPlayer1Actions m_Player1ActionsCallbackInterface;
     private readonly InputAction m_Player1_JoystickMovement;
     private readonly InputAction m_Player1_KeyboardMovement;
+    private readonly InputAction m_Player1_Observe;
     public struct Player1Actions
     {
         private @PlayerInput m_Wrapper;
         public Player1Actions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @JoystickMovement => m_Wrapper.m_Player1_JoystickMovement;
         public InputAction @KeyboardMovement => m_Wrapper.m_Player1_KeyboardMovement;
+        public InputAction @Observe => m_Wrapper.m_Player1_Observe;
         public InputActionMap Get() { return m_Wrapper.m_Player1; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -224,6 +247,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @KeyboardMovement.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnKeyboardMovement;
                 @KeyboardMovement.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnKeyboardMovement;
                 @KeyboardMovement.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnKeyboardMovement;
+                @Observe.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnObserve;
+                @Observe.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnObserve;
+                @Observe.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnObserve;
             }
             m_Wrapper.m_Player1ActionsCallbackInterface = instance;
             if (instance != null)
@@ -234,6 +260,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @KeyboardMovement.started += instance.OnKeyboardMovement;
                 @KeyboardMovement.performed += instance.OnKeyboardMovement;
                 @KeyboardMovement.canceled += instance.OnKeyboardMovement;
+                @Observe.started += instance.OnObserve;
+                @Observe.performed += instance.OnObserve;
+                @Observe.canceled += instance.OnObserve;
             }
         }
     }
@@ -275,6 +304,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     {
         void OnJoystickMovement(InputAction.CallbackContext context);
         void OnKeyboardMovement(InputAction.CallbackContext context);
+        void OnObserve(InputAction.CallbackContext context);
     }
     public interface IGlobalActions
     {

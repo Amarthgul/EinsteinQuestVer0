@@ -11,6 +11,7 @@ namespace EinsteinQuest
         /// ======================= Input actions =========================
         /// </summary>
         private InputAction joystickMovement;
+        private InputAction observePress;
 
 
         /// <summary>
@@ -25,6 +26,8 @@ namespace EinsteinQuest
         
         // Squirrel facing (0, 0, 1)
         [SerializeField] private GameObject thisSquirrel;
+        [SerializeField] private GameManager gm;
+        public bool isPickup = false;
 
         [Space(20)]
         [Header("General")]
@@ -39,10 +42,12 @@ namespace EinsteinQuest
         /// =========================== Methods =========================== 
         /// ===============================================================
 
-        public void Initialize(InputAction Joystick)
+        public void Initialize(InputAction Joystick, InputAction Observe)
         {
             joystickMovement = Joystick;
+            observePress = Observe;
             joystickMovement.Enable();
+            observePress.Enable();
         }
 
         // Start is called before the first frame update
@@ -57,9 +62,18 @@ namespace EinsteinQuest
             
             float movementX = joystickMovement.ReadValue<Vector2>().x / speedNormalizer;
             float movementZ = joystickMovement.ReadValue<Vector2>().y / speedNormalizer;
+            bool observePressed = observePress.WasPressedThisFrame();
 
-            UpdateDirection(movementX, movementZ);
-            UpdatePosition(movementX, movementZ);
+            if (observePressed)
+            {
+                Pickup();
+            }
+
+            if (!isPickup)
+            {
+                UpdateDirection(movementX, movementZ);
+                UpdatePosition(movementX, movementZ);
+            }
 
         }
 
@@ -96,6 +110,19 @@ namespace EinsteinQuest
         private void UpdateKeyboard()
         {
 
+        }
+
+        private void Pickup()
+        {
+            if (isPickup)
+            {
+                isPickup = false;
+            }
+            else
+            {
+                //isPickup = gm.SquirrelAcorn();
+                isPickup= true;
+            }
         }
     }
 }

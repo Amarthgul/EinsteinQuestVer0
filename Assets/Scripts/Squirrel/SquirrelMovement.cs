@@ -120,8 +120,8 @@ namespace EinsteinQuest
             }
             else
             {
-                //isPickup = gm.SquirrelAcorn();
-                isPickup= true;
+                isPickup = gm.SquirrelAcorn();
+                //isPickup = true;
             }
         }
     }

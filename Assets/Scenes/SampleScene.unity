@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -374,6 +374,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisSquirrel: {fileID: 966608339}
+  gm: {fileID: 2009833862}
+  isPickup: 0
   speedNormalizer: 1
 --- !u!1001 &1261473343
 PrefabInstance:
@@ -585,3 +587,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acornModels:
   - {fileID: 919132149155446097, guid: 65ec85c7efc52f54b92b9d79a77f0309, type: 3}
+  squirrels:
+  - {fileID: 966608339}

@@ -5,6 +5,9 @@ using UnityEngine.InputSystem;
 
 namespace EinsteinQuest
 {
+    /// <summary>
+    /// This class is no longer used after April 8th
+    /// </summary>
     public class SquirrelMovement : MonoBehaviour
     {
         /// <summary>
@@ -120,7 +123,7 @@ namespace EinsteinQuest
             }
             else
             {
-                isPickup = gm.SquirrelAcorn();
+                isPickup = gm.SquirrelInteractQuery();
                 //isPickup = true;
             }
         }

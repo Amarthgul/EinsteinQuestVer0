@@ -418,7 +418,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ccd438e3ac3961c4da0a700e06f7a373, type: 3}
   m_PrefabInstance: {fileID: 1574213012}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &966608343
+--- !u!114 &966608347
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -427,7 +427,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 966608339}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46b1b9766c2314944a34e67185a66343, type: 3}
+  m_Script: {fileID: 11500000, guid: 27367c922910f2b4fbb364bb0d858b61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   thisSquirrel: {fileID: 966608339}
@@ -557,7 +557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 499273cc170cc3b4ab422a8e9457ae10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  squirrel: {fileID: 966608343}
+  squirrel: {fileID: 966608347}
 --- !u!4 &2009833861
 Transform:
   m_ObjectHideFlags: 0
@@ -588,4 +588,4 @@ MonoBehaviour:
   acornModels:
   - {fileID: 919132149155446097, guid: 65ec85c7efc52f54b92b9d79a77f0309, type: 3}
   squirrels:
-  - {fileID: 966608343}
+  - {fileID: 966608347}

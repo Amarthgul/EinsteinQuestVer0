@@ -23,7 +23,9 @@ namespace EinsteinQuest
         {
             inputScheme = new PlayerInput();
 
-            squirrelMovement.Initialize(inputScheme.Player1.JoystickMovement);
+            squirrelMovement.Initialize(
+                inputScheme.Player1.JoystickMovement,
+                inputScheme.Player1.Observe);
 
 
         }

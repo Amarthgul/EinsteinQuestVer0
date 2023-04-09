@@ -10,13 +10,15 @@ namespace EinsteinQuest
         /// <summary>
         /// ========================== Constants ==========================
         /// </summary>
-         
+        private int currentDimension; //0 red, 1 green, 2 blue 
 
         /// <summary>
         /// ==================== Serialized variables ===================== 
         /// </summary>
 
         [SerializeField] List<GameObject> acornModels = new List<GameObject>();
+        [SerializeField] List<GameObject> squirrels = new List<GameObject>();
+        private List<GameObject> acorns= new List<GameObject>();
 
 
         // Start is called before the first frame update
@@ -53,11 +55,35 @@ namespace EinsteinQuest
                     acornToSpawn, 
                     new Vector3(posX, Globals.ACORN_SPAWN_Z, posZ), 
                     Quaternion.identity);
+                acorns.Add(newAcorn);
 
-                newAcorn.AddComponent<Acorn>();
+                var a = newAcorn.AddComponent<Acorn>();
                 // TODO: attach more script or set the gameobject attributes 
-
+                var initialState = Globals.RNG.Next(3) + 1; //1, 2, 3
+                if (Globals.RNG.Next(2) == 0)
+                {
+                    initialState *= -1;
+                }
+                a.currentState = (Acorn.states)initialState;
             }
+        }
+
+        public bool SquirrelAcorn()
+        {
+            var pickable = false;
+
+            var squirrel = squirrels[0]; //for sake of testing, CONSIDER ASYNC FOR FINAL
+            foreach (GameObject a in acorns)
+            {
+                float distance = Vector3.Distance(a.transform.position, squirrel.transform.position);
+                //Debug.Log(distance);
+                if (distance <= 0.2) {
+                    pickable = true;
+                    var closestacorn = a.GetComponent<Acorn>();
+                    closestacorn.Observe();
+                }
+            }
+            return pickable;
         }
     }
 }

@@ -15,7 +15,7 @@ namespace EinsteinQuest
         /// <summary>
         /// ==================== Serialized variables ===================== 
         /// </summary>
-        [SerializeField] private SquirrelMovement squirrelMovement;
+        [SerializeField] private Squirrel squirrel;
 
         
 
@@ -23,7 +23,7 @@ namespace EinsteinQuest
         {
             inputScheme = new PlayerInput();
 
-            squirrelMovement.Initialize(
+            squirrel.Initialize(
                 inputScheme.Player1.JoystickMovement,
                 inputScheme.Player1.Observe);
 

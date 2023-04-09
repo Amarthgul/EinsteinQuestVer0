@@ -21,7 +21,17 @@ namespace EinsteinQuest
         public const float MAP_LENGTH = 3f; // X aixs. Unit in meter 
 
         // Buffer zone since some terrain will occupy a bit of the map border 
-        public const float MAP_BUFFER = .1f; 
+        public const float MAP_BUFFER = .1f;
+
+
+        /// ================================================================================
+        /// ================================= Dimensions ===================================
+        /// ================================================================================
+
+        public enum Colors { R, G, B };
+
+        // For quick iterating access 
+        public static List<Colors> ColorIterator = new List<Colors>() { Colors.R, Colors.G, Colors.B};
 
         /// ================================================================================
         /// ============================== Acorn and levels ================================
@@ -31,6 +41,21 @@ namespace EinsteinQuest
         public const int ACORN_FLUC = 2;    // Acorn respawn fluctuation 
 
         public const float ACORN_SPAWN_Z = .1f; // Height from ground for spawned acorns 
+
+        public const float ACORN_PICKUP_DIST = .2f; 
+
+        public enum AcornStates { 
+            Red = 1, 
+            AntiRed = -1, 
+            Green = 2, 
+            AntiGreen = -2, 
+            Blue = 3, 
+            AntiBlue = -3 };
+
+        public const int ACORN_CHOICE_PER_DIM = 2; 
+        public static List<AcornStates> Reds = new List<AcornStates>() { AcornStates.Red, AcornStates.AntiRed };
+        public static List<AcornStates> Greens = new List<AcornStates>() { AcornStates.Green, AcornStates.AntiGreen };
+        public static List<AcornStates> Blues = new List<AcornStates>() { AcornStates.Blue, AcornStates.AntiBlue };
 
         /// ================================================================================
         /// ==================================== Misc ======================================

@@ -40,7 +40,8 @@ namespace EinsteinQuest
         public const int ACORN_PER_DIM = 6; // Base amount of acorn respawn
         public const int ACORN_FLUC = 2;    // Acorn respawn fluctuation 
 
-        public const float ACORN_SPAWN_Z = .1f; // Height from ground for spawned acorns 
+        public const float ACORN_SPAWN_Z = .1f;  // Height from ground for spawned acorns 
+        public const float ACORN_PICKUP_Z = .2f; // Lift the acorn if it is picked up 
 
         public const float ACORN_PICKUP_DIST = .2f; 
 

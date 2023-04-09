@@ -7,17 +7,34 @@ namespace EinsteinQuest
 {
     public class Acorn : MonoBehaviour
     {
+        /// ===============================================================
+        /// ========================== Constants ==========================
+
+        // For testing only, lift the acorn when it is being picked up 
+        private const float PICKUP_OFFSET = .3f;
+
+        /// ===============================================================
+        /// ======================== Properties =========================== 
+
+        // the geomtry of the acorn
         public GameObject thisAcornModel; 
 
+        // Color state of the acorn, Red, AntiRed, etc. 
         public Globals.AcornStates currentState;
 
+        // When being interacted, the acorn enters pick up protection
+        // to avoid the situation when 2 squirrels observe at the same time. 
+        public bool pickUpProtection = false;
+
+        // When observed by an squirrel, acorn records the observer ID
+        // to record observership and to avoid double observation 
+        public int observerID = 0; 
+
         public float visibility; //not sure if you want this as gradient or flag
-        public bool visibile;
+        public bool visible;
 
-        public Acorn()
-        {
+        public Dictionary<Globals.AcornStates, Shader> colorShaders;
 
-        }
 
         // Start is called before the first frame update
         void Start()
@@ -28,7 +45,16 @@ namespace EinsteinQuest
         // Update is called once per frame
         void Update()
         {
-        
+            UpdateAcornAnimation();
+        }
+
+        /// <summary>
+        /// Connect the acorn to a dict of shaders for changing appreance
+        /// </summary>
+        /// <param name="ShaderList">6 shaders of different states</param>
+        public void ConnectShaders(Dictionary<Globals.AcornStates, Shader> ShaderList)
+        {
+            colorShaders = ShaderList; 
         }
 
 
@@ -58,9 +84,40 @@ namespace EinsteinQuest
                 default:
                     break;
             }
+
+            UpdateShader();
         }
 
+        /// ===============================================================
+        /// ======================== Private Methods ======================
+        /// ===============================================================
 
+
+        /// <summary>
+        /// Update the appearance of the acorn according to current state 
+        /// </summary>
+        private void UpdateShader()
+        {
+            thisAcornModel.GetComponent<Renderer>().material.shader = colorShaders[currentState];
+        }
+
+        /// <summary>
+        /// Update the animaiton and movement of the acorn.
+        /// </summary>
+        private void UpdateAcornAnimation()
+        {
+            Vector3 pos = thisAcornModel.transform.position;
+
+            if (pickUpProtection)
+            {
+                thisAcornModel.transform.position = new Vector3(pos.x, Globals.ACORN_PICKUP_Z, pos.z);
+            }
+            else
+            {
+                thisAcornModel.transform.position = new Vector3(pos.x, Globals.ACORN_SPAWN_Z, pos.z);
+            }
+
+        }
 
     }
 }

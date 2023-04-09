@@ -12,7 +12,6 @@ namespace EinsteinQuest
         private InputAction joystickMovement;
         private InputAction observePress;
 
-
         /// ===============================================================
         /// ========================== Constants ==========================
 
@@ -21,16 +20,10 @@ namespace EinsteinQuest
         /// ===============================================================
         /// ==================== Serialized variables ===================== 
 
-        // Squirrel facing (0, 0, 1)
+        // Squirrel model facing (0, 0, 1)
         [SerializeField] public GameObject thisSquirrel;
+
         [SerializeField] private GameManager gm;
-
-        /// ===============================================================
-        /// ======================= Squirrel Stats ========================
-
-        public Globals.Colors squirrelColor { get; set; }
-
-        public bool acronHold = false;
 
         [Space(20)]
         [Header("General")]
@@ -40,6 +33,14 @@ namespace EinsteinQuest
         [Range(0f, 10f)]
         [SerializeField] private float speedNormalizer = 1;
 
+        /// ===============================================================
+        /// ======================= Squirrel Stats ========================
+
+        public Globals.Colors squirrelColor { get; set; }
+
+        public bool acronHold = false;
+
+        public int squirrelID = 123456; 
 
         /// ===============================================================
         /// =========================== Methods =========================== 
@@ -51,6 +52,8 @@ namespace EinsteinQuest
             observePress = Observe;
             joystickMovement.Enable();
             observePress.Enable();
+
+            squirrelColor = Globals.Colors.R; // For testing purpose, set it to Red for now
         }
 
         // Start is called before the first frame update
@@ -123,15 +126,8 @@ namespace EinsteinQuest
         /// </summary>
         private void PickupAttempt()
         {
-            if (acronHold)
-            {
-                acronHold = false;
-            }
-            else
-            {
-                acronHold = gm.SquirrelInteractQuery();
-                //acronHold = true;
-            }
+            acronHold = gm.SquirrelInteractQuery();
+
         }
     }
 }

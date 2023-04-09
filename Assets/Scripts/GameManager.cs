@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 namespace EinsteinQuest
 {
     public class GameManager : MonoBehaviour
@@ -17,13 +18,34 @@ namespace EinsteinQuest
         /// ===============================================================
         /// ==================== Serialized variables ===================== 
 
-        // Provides randomization of acorns 
+        [Header("Acorn Models")]
+        [Space(5)]
+
+        [Tooltip("Provides randomization of acorn shapes")]
         [SerializeField] List<GameObject> acornModels = new List<GameObject>();
 
-        // List of squirrel instances 
+        [Header("Acorn Shaders")]
+        [Space(5)]
+        [SerializeField] Shader AcornRedShader;
+        [SerializeField] Shader AcornAntiRedShader;
+        [SerializeField] Shader AcornGreenShader;
+        [SerializeField] Shader AcornAntiGreenShader;
+        [SerializeField] Shader AcornBlueShader;
+        [SerializeField] Shader AcornAntiBlueShader;
+
+        [Space(15)]
+        [Header("Squirrels")]
+        [Space(5)]
+
+        [Tooltip("List of squirrel instances")]
         [SerializeField] List<Squirrel> squirrels = new List<Squirrel>();
 
+        /// ===============================================================
+        /// ======================== Properties =========================== 
+
         private List<Acorn> acorns = new List<Acorn>();
+
+        private Dictionary<Globals.AcornStates, Shader> acornShaders = new Dictionary<Globals.AcornStates, Shader>();
 
         /// ===============================================================
         /// ========================== Methods ============================
@@ -31,6 +53,8 @@ namespace EinsteinQuest
         // Start is called before the first frame update
         void Start()
         {
+            CreateShaderList(); 
+
             ShuffleColor();
             RespawnAcorn();
 
@@ -47,6 +71,9 @@ namespace EinsteinQuest
         /// </summary>
         private void RespawnAcorn()
         {
+            // TODO: add pesudo random to ensure the distance between acorns
+            // are above squirrel's pickup distance 
+
             int amountToRespawn = Globals.ACORN_PER_DIM +
                 (int)(Globals.ACORN_FLUC * (Globals.RNG.NextDouble() - 0.5) * 2);
 
@@ -63,13 +90,11 @@ namespace EinsteinQuest
                     new Vector3(posX, Globals.ACORN_SPAWN_Z, posZ), 
                     Quaternion.identity);
 
-                // Create an acorn class and collapse it
-                Acorn newAcorn = new Acorn();
-
-                // Attach the class onto the model 
+                // Attach the class onto the model and set properties 
                 newAcornModel.AddComponent<Acorn>();
-                newAcornModel.GetComponent<Acorn>().Collapse(currentDimension);
+                newAcornModel.GetComponent<Acorn>().ConnectShaders(acornShaders);
                 newAcornModel.GetComponent<Acorn>().thisAcornModel = newAcornModel;
+                newAcornModel.GetComponent<Acorn>().Collapse(currentDimension);
 
                 // Add acorn class into the list 
                 acorns.Add(newAcornModel.GetComponent<Acorn>());
@@ -92,6 +117,21 @@ namespace EinsteinQuest
             currentDimension = pool[Globals.RNG.Next() % pool.Count];
         }
 
+        /// <summary>
+        /// Create list of shaders accroding to what was given. 
+        /// </summary>
+        private void CreateShaderList()
+        {
+            acornShaders.Add(Globals.AcornStates.Red, AcornRedShader);
+            acornShaders.Add(Globals.AcornStates.AntiRed, AcornAntiRedShader);
+            acornShaders.Add(Globals.AcornStates.Green, AcornGreenShader);
+            acornShaders.Add(Globals.AcornStates.AntiGreen, AcornAntiGreenShader);
+            acornShaders.Add(Globals.AcornStates.Blue, AcornBlueShader);
+            acornShaders.Add(Globals.AcornStates.AntiBlue, AcornAntiBlueShader);
+        }
+
+
+
         /// ===============================================================
         /// ======================== Public Methods =======================
         /// ===============================================================
@@ -105,19 +145,42 @@ namespace EinsteinQuest
         {
 
             var squirrel = squirrels[0]; //for sake of testing, CONSIDER ASYNC FOR FINAL
+
             foreach (Acorn a in acorns)
             {
-                
-                Debug.Log(a.thisAcornModel.transform.position);
-                float distance = Vector3.Distance(a.thisAcornModel.transform.position, 
-                    squirrel.thisSquirrel.transform.position);
-                //Debug.Log(distance);
-                if (distance <= Globals.ACORN_PICKUP_DIST) {
-                    var closestacorn = a.GetComponent<Acorn>();
-                    closestacorn.Collapse(squirrel.squirrelColor);
 
-                    // Successfully picked up an acorn  
-                    return true; 
+                Vector3 acornPlanar = new Vector3(
+                    a.thisAcornModel.transform.position.x, 
+                    0, 
+                    a.thisAcornModel.transform.position.z);
+                Vector3 squirrelPlanar = new Vector3(
+                    squirrel.thisSquirrel.transform.position.x, 
+                    0, 
+                    squirrel.thisSquirrel.transform.position.z);
+                float distance = Vector3.Distance(acornPlanar, squirrelPlanar);
+
+                // The acorn spawn should be set so that no 2 acorn can be within the
+                // pickup range of the squirrel at the same time. 
+                if (distance <= Globals.ACORN_PICKUP_DIST) {
+                    if (!a.pickUpProtection)
+                    {
+                        // If this acorn is free to be picked up / interacted with
+
+                        a.Collapse(squirrel.squirrelColor);
+                        a.observerID = squirrel.squirrelID;
+                        a.pickUpProtection = true;
+
+                        return true;
+                    }
+                    else if (a.pickUpProtection && a.observerID == squirrel.squirrelID)
+                    {
+                        // If this is the same acorn the squirrel have been holding 
+
+                        a.observerID = 0;
+                        a.pickUpProtection = false;
+
+                        return false;
+                    }
                 }
             }
 

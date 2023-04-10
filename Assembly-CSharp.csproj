@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\Squirrel\CPU\SquirrelWanderState.cs" />
      <Compile Include="Assets\Scripts\Squirrel\CPU\SquirrelCPU.cs" />
      <Compile Include="Assets\Scripts\Squirrel\CPU\SquirrelObstacleAvoidanceState.cs" />
+     <Compile Include="Assets\Scripts\Squirrel\CPU\SquirrelObserveState.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

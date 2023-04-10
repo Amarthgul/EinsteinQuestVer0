@@ -110,7 +110,7 @@ public class Vision
             }
         }
         return false;
-    } 
+    }
     public void FixRotation() {
         transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
     }

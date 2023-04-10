@@ -1,4 +1,5 @@
 using UnityEngine;
+using EinsteinQuest;
 public class SquirrelAcornTargetState : ICPUState {
     Vision obstacleVision, acornVision;
     SquirrelCPU squirrelCPU;
@@ -32,7 +33,7 @@ public class SquirrelAcornTargetState : ICPUState {
         if (!acornVision.InVision(targetAcorn)) {
             // check if a different acorn is in vision
             GameObject newAcorn = acornVision.FindClosestHitObject(SquirrelCPU.ACORN_TAG);
-            if(newAcorn != null) {
+            if(newAcorn != null && squirrelCPU.VisitableAcorn(newAcorn)) {
                 // change to new acorn
                 targetAcorn = newAcorn;
             }
@@ -40,6 +41,9 @@ public class SquirrelAcornTargetState : ICPUState {
             else {
                 squirrelCPU.state = new SquirrelAcornSearchState(squirrelCPU);
             }
+        }
+        else if(Mathf.Abs(Vector3.Distance(targetAcorn.transform.position, transform.position)) <= squirrelCPU.distanceToAcornToObserve){
+            squirrelCPU.state = new SquirrelObserveState(squirrelCPU, targetAcorn);
         }
     }
 }

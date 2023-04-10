@@ -40,6 +40,7 @@ namespace EinsteinQuest
         void Start()
         {
             thisAcornModel.tag = SquirrelCPU.ACORN_TAG;
+            thisAcornModel.AddComponent<BoxCollider>();
         }
 
         // Update is called once per frame

@@ -32,6 +32,7 @@ namespace EinsteinQuest
         [Tooltip("Damping the movement speed of the squirrel. This can be fine tunned to fit your device.")]
         [Range(0f, 10f)]
         [SerializeField] private float speedNormalizer = 1;
+        [SerializeField] private bool cpuSquirrel = false;
 
         /// ===============================================================
         /// ======================= Squirrel Stats ========================
@@ -59,27 +60,28 @@ namespace EinsteinQuest
         // Start is called before the first frame update
         void Start()
         {
-        
+
         }
 
         // Update is called once per frame
         void Update()
         {
-            
-            float movementX = joystickMovement.ReadValue<Vector2>().x / speedNormalizer;
-            float movementZ = joystickMovement.ReadValue<Vector2>().y / speedNormalizer;
+            if(!cpuSquirrel) {
+                float movementX = joystickMovement.ReadValue<Vector2>().x / speedNormalizer;
+                float movementZ = joystickMovement.ReadValue<Vector2>().y / speedNormalizer;
 
-            bool observePressed = observePress.WasPressedThisFrame();
+                bool observePressed = observePress.WasPressedThisFrame();
 
-            if (observePressed)
-            {
-                PickupAttempt();
-            }
+                if (observePressed)
+                {
+                    PickupAttempt();
+                }
 
-            if (!acronHold)
-            {
-                UpdateDirection(movementX, movementZ);
-                UpdatePosition(movementX, movementZ);
+                if (!acronHold)
+                {
+                    UpdateDirection(movementX, movementZ);
+                    UpdatePosition(movementX, movementZ);
+                }
             }
 
         }
@@ -124,7 +126,7 @@ namespace EinsteinQuest
         /// If there is currently no acorn pciked up by this squirrel, then
         /// this sends an query to GM asking for the nearest acorn. 
         /// </summary>
-        private void PickupAttempt()
+        public void PickupAttempt()
         {
             acronHold = gm.SquirrelInteractQuery();
 

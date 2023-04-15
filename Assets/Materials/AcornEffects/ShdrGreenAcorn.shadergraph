@@ -5,7 +5,11 @@
     "m_Properties": [],
     "m_Keywords": [],
     "m_Dropdowns": [],
-    "m_CategoryData": [],
+    "m_CategoryData": [
+        {
+            "m_Id": "9f29a0dc72804f18abe52b85fe6b2c39"
+        }
+    ],
     "m_Nodes": [
         {
             "m_Id": "def9274fd00348e799759ca60035e4e8"
@@ -477,6 +481,14 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.CategoryData",
+    "m_ObjectId": "9f29a0dc72804f18abe52b85fe6b2c39",
+    "m_Name": "",
+    "m_ChildObjectList": []
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "a0fc880e7d6047e687f55afa1f0a07f7",
     "m_Id": 0,
@@ -501,9 +513,9 @@
     "m_ShaderOutputName": "BaseColor",
     "m_StageCapability": 2,
     "m_Value": {
-        "x": 0.5,
-        "y": 0.5,
-        "z": 0.5
+        "x": 0.5254902243614197,
+        "y": 0.9450980424880981,
+        "z": 0.5098039507865906
     },
     "m_DefaultValue": {
         "x": 0.0,

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -907,7 +907,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   acornModels:
-  - {fileID: 919132149155446097, guid: 65ec85c7efc52f54b92b9d79a77f0309, type: 3}
+  - {fileID: 6718040631742078621, guid: 3eafd00f23de18145bc606446f83ca78, type: 3}
   AcornRedShader: {fileID: -6465566751694194690, guid: f746a2895afb5e4448cda4ec766ae310, type: 3}
   AcornAntiRedShader: {fileID: -6465566751694194690, guid: b438cb2bbfdc1d342b470bc3e788b7a7, type: 3}
   AcornGreenShader: {fileID: -6465566751694194690, guid: 800aa5bfc7753e74ab6228687ea39ac2, type: 3}
@@ -929,5 +929,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cutscene: {fileID: 1327370801}
-  freezeTime: 4
-  fadeTime: 2

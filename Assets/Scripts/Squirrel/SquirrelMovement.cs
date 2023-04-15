@@ -123,7 +123,7 @@ namespace EinsteinQuest
             }
             else
             {
-                isPickup = gm.SquirrelInteractQuery();
+                //isPickup = gm.SquirrelInteractQuery(squirrel);
                 //isPickup = true;
             }
         }

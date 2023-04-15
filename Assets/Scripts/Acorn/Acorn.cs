@@ -98,7 +98,7 @@ namespace EinsteinQuest
         /// </summary>
         private void UpdateShader()
         {
-            thisAcornModel.GetComponent<Renderer>().material.shader = colorShaders[currentState];
+            thisAcornModel.gameObject.transform.GetChild(0).GetComponent<Renderer>().material.shader = colorShaders[currentState];
         }
 
         /// <summary>

@@ -79,5 +79,34 @@ namespace EinsteinQuest
         /// generating similar or even same number, this RNG is used as a global
         /// variable to provide a more "random" generation. 
         public static System.Random RNG = new System.Random();
+
+        /// ================================================================================
+        /// ============================== Squirrel AI =====================================
+        /// ================================================================================
+        public static class AISpeed {
+            public const float WANDER_MOVEMENT_SPEED = 0.3f;
+            public const float WANDER_ROTATION_SPEED = 4f;
+            public const float AVOIDANCE_MOVEMENT_SPEED = 0.3f;
+            public const float AVOIDANCE_ROTATION_SPEED = 3f;
+            public const float ACORN_MOVEMENT_SPEED = 0.3f;
+            public const float ACORN_TARGET_ROTATION_SPEED = 5f;
+
+        }
+        public static class AIRays {
+            public const float AVOIDANCE_RAY_DISTANCE = 0.3f;
+            public const float RAY_HEIGHT_FROM_GROUND = 0.1f;
+            public const float ACORN_RAY_HEIGHT_FROM_GROUND = 0.08f;
+            public const float ACORN_TARGET_RAY_DISTANCE = 0.5f;
+            public const int NUMBER_OF_OBSTACLE_RAYS = 27;
+            public const int NUMBER_OF_ACORN_RAYS = 36;
+        }
+        public static class AIFOV {
+            public const int OBSTACLE_FIELD_OF_VIEW = 270;
+            public const int ACORN_TARGET_FIELD_OF_VIEW = 360;
+
+        }
+        public const float RANDOM_WANDER_FACTOR = 1f;
+        public const float DISTANCE_TO_OBSERVE_ACORN = 0.15f;
+
     }
 }

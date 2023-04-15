@@ -141,10 +141,8 @@ namespace EinsteinQuest
         /// Invoked when a squirrel tries to interact with an acorn. 
         /// </summary>
         /// <returns>True if there is an acorn to interact with.</returns>
-        public bool SquirrelInteractQuery()
+        public bool SquirrelInteractQuery(Squirrel squirrel)
         {
-
-            var squirrel = squirrels[0]; //for sake of testing, CONSIDER ASYNC FOR FINAL
 
             foreach (Acorn a in acorns)
             {
@@ -165,7 +163,7 @@ namespace EinsteinQuest
                     if (!a.pickUpProtection)
                     {
                         // If this acorn is free to be picked up / interacted with
-
+                        a.tag = CPUMovementController.OBSTACLE_TAG;
                         a.Collapse(squirrel.squirrelColor);
                         a.observerID = squirrel.squirrelID;
                         a.pickUpProtection = true;
@@ -175,7 +173,7 @@ namespace EinsteinQuest
                     else if (a.pickUpProtection && a.observerID == squirrel.squirrelID)
                     {
                         // If this is the same acorn the squirrel have been holding 
-
+                        a.tag = CPUMovementController.ACORN_TAG;
                         a.observerID = 0;
                         a.pickUpProtection = false;
 

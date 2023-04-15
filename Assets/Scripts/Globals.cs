@@ -57,6 +57,19 @@ namespace EinsteinQuest
         public static List<AcornStates> Reds = new List<AcornStates>() { AcornStates.Red, AcornStates.AntiRed };
         public static List<AcornStates> Greens = new List<AcornStates>() { AcornStates.Green, AcornStates.AntiGreen };
         public static List<AcornStates> Blues = new List<AcornStates>() { AcornStates.Blue, AcornStates.AntiBlue };
+        /// ================================================================================
+        /// ==================================== Cutscenes =================================
+        /// ================================================================================
+
+        public const float FADE_TIME = 1f;
+        public static (string path, float time)[] Slides = new (string path, float time)[]
+        {
+            //("Cutscene/path/to/img", time),
+
+            ("Cutscene/TestImages/blue", 2f),
+            ("Cutscene/TestImages/green", 3f),
+            ("Cutscene/TestImages/red", 4f)
+        };
 
         /// ================================================================================
         /// ==================================== Misc ======================================

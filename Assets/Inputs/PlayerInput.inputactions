@@ -31,6 +31,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "JoinLeaveGame",
+                    "type": "Button",
+                    "id": "5bcf6aa3-d6af-444d-9989-45a87ad11e54",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -97,6 +106,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Observe",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fc652231-4622-47a5-a78b-7ce5211feffb",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "JoinLeaveGame",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

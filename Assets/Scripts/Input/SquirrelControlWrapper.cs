@@ -6,29 +6,23 @@ namespace EinsteinQuest
 {
     public class SquirrelControlWrapper : MonoBehaviour
     {
-        [SerializeField] public PlayerInput inputScheme;
-        /// <summary>
-        /// ======================= Input actions =========================
-        /// </summary>
-        //
-
-        private Squirrel squirrel;
-
+        private PlayerInput inputScheme;
+        [SerializeField] Squirrel squirrel;
+        void Update() {
+            //if(inputScheme.Player1.JoinLeaveGame)
+        }
         private void Awake()
         {
-            inputScheme = new PlayerInput();
-            this.squirrel = SquirrelManager.Instance.GetAvailableSquirrel();
+            this.inputScheme = new PlayerInput();
             squirrel.Initialize(
                 inputScheme.Player1.JoystickMovement,
-                inputScheme.Player1.Observe);
-
-
+                inputScheme.Player1.Observe,
+                inputScheme.Player1.JoinLeaveGame);
         }
 
         private void OnEnable()
         {
             inputScheme.Enable();
-            squirrel.cpuControl = false;
             var _q = new QuitHandler(inputScheme.Global.Quit);
 
         }

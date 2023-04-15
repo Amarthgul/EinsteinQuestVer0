@@ -53,6 +53,15 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""JoinLeaveGame"",
+                    ""type"": ""Button"",
+                    ""id"": ""5bcf6aa3-d6af-444d-9989-45a87ad11e54"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -121,6 +130,17 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""action"": ""Observe"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fc652231-4622-47a5-a78b-7ce5211feffb"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""JoinLeaveGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -160,6 +180,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         m_Player1_JoystickMovement = m_Player1.FindAction("JoystickMovement", throwIfNotFound: true);
         m_Player1_KeyboardMovement = m_Player1.FindAction("KeyboardMovement", throwIfNotFound: true);
         m_Player1_Observe = m_Player1.FindAction("Observe", throwIfNotFound: true);
+        m_Player1_JoinLeaveGame = m_Player1.FindAction("JoinLeaveGame", throwIfNotFound: true);
         // Global
         m_Global = asset.FindActionMap("Global", throwIfNotFound: true);
         m_Global_Quit = m_Global.FindAction("Quit", throwIfNotFound: true);
@@ -225,6 +246,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player1_JoystickMovement;
     private readonly InputAction m_Player1_KeyboardMovement;
     private readonly InputAction m_Player1_Observe;
+    private readonly InputAction m_Player1_JoinLeaveGame;
     public struct Player1Actions
     {
         private @PlayerInput m_Wrapper;
@@ -232,6 +254,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         public InputAction @JoystickMovement => m_Wrapper.m_Player1_JoystickMovement;
         public InputAction @KeyboardMovement => m_Wrapper.m_Player1_KeyboardMovement;
         public InputAction @Observe => m_Wrapper.m_Player1_Observe;
+        public InputAction @JoinLeaveGame => m_Wrapper.m_Player1_JoinLeaveGame;
         public InputActionMap Get() { return m_Wrapper.m_Player1; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -250,6 +273,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @Observe.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnObserve;
                 @Observe.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnObserve;
                 @Observe.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnObserve;
+                @JoinLeaveGame.started -= m_Wrapper.m_Player1ActionsCallbackInterface.OnJoinLeaveGame;
+                @JoinLeaveGame.performed -= m_Wrapper.m_Player1ActionsCallbackInterface.OnJoinLeaveGame;
+                @JoinLeaveGame.canceled -= m_Wrapper.m_Player1ActionsCallbackInterface.OnJoinLeaveGame;
             }
             m_Wrapper.m_Player1ActionsCallbackInterface = instance;
             if (instance != null)
@@ -263,6 +289,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @Observe.started += instance.OnObserve;
                 @Observe.performed += instance.OnObserve;
                 @Observe.canceled += instance.OnObserve;
+                @JoinLeaveGame.started += instance.OnJoinLeaveGame;
+                @JoinLeaveGame.performed += instance.OnJoinLeaveGame;
+                @JoinLeaveGame.canceled += instance.OnJoinLeaveGame;
             }
         }
     }
@@ -305,6 +334,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         void OnJoystickMovement(InputAction.CallbackContext context);
         void OnKeyboardMovement(InputAction.CallbackContext context);
         void OnObserve(InputAction.CallbackContext context);
+        void OnJoinLeaveGame(InputAction.CallbackContext context);
     }
     public interface IGlobalActions
     {

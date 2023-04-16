@@ -57,7 +57,7 @@ namespace EinsteinQuest
             joystickMovement.Enable();
             observePress.Enable();
             joinLeavePress.Enable();
-            squirrelColor = Globals.Colors.R; // For testing purpose, set it to Red for now
+            //squirrelColor = Globals.Colors.R; // For testing purpose, set it to Red for now
         }
 
         // Start is called before the first frame update

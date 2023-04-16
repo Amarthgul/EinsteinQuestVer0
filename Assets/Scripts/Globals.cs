@@ -16,7 +16,7 @@ namespace EinsteinQuest
         /// ================================================================================
         /// ============================ Map Size and Display ==============================
         /// ================================================================================
-        
+
         public const float MAP_WIDTH = 2f;  // Z axis. Unit in meter 
         public const float MAP_LENGTH = 3f; // X aixs. Unit in meter 
 
@@ -28,10 +28,10 @@ namespace EinsteinQuest
         /// ================================= Dimensions ===================================
         /// ================================================================================
 
-        public enum Colors { R, G, B };
+        public enum Colors { R, G, B, A };
 
         // For quick iterating access 
-        public static List<Colors> ColorIterator = new List<Colors>() { Colors.R, Colors.G, Colors.B};
+        public static List<Colors> ColorIterator = new List<Colors>() { Colors.R, Colors.G, Colors.B };
 
         /// ================================================================================
         /// ============================== Acorn and levels ================================
@@ -43,7 +43,18 @@ namespace EinsteinQuest
         public const float ACORN_SPAWN_Z = .1f;  // Height from ground for spawned acorns 
         public const float ACORN_PICKUP_Z = .2f; // Lift the acorn if it is picked up 
 
-        public const float ACORN_PICKUP_DIST = .2f; 
+        public const float ACORN_PICKUP_DIST = .2f;
+
+        public static Dictionary<AcornStates, Colors> ColorStates = new Dictionary<AcornStates, Colors>()
+        {
+            { AcornStates.Red,Colors.R},
+            { AcornStates.AntiRed,Colors.R},
+            { AcornStates.Blue,Colors.B},
+            { AcornStates.AntiBlue,Colors.B},
+            { AcornStates.Green,Colors.G},
+            { AcornStates.AntiGreen,Colors.G},
+            {0, 0 }
+        };
 
         public enum AcornStates { 
             Red = 1, 
@@ -57,6 +68,20 @@ namespace EinsteinQuest
         public static List<AcornStates> Reds = new List<AcornStates>() { AcornStates.Red, AcornStates.AntiRed };
         public static List<AcornStates> Greens = new List<AcornStates>() { AcornStates.Green, AcornStates.AntiGreen };
         public static List<AcornStates> Blues = new List<AcornStates>() { AcornStates.Blue, AcornStates.AntiBlue };
+        public static List<AcornStates> All = new List<AcornStates>() { AcornStates.Red, AcornStates.AntiRed, AcornStates.Blue, AcornStates.AntiBlue, AcornStates.Green, AcornStates.AntiGreen };
+        /// ================================================================================
+        /// ==================================== Cutscenes =================================
+        /// ================================================================================
+
+        public const float FADE_TIME = 1f;
+        public static (string path, float time)[] Slides = new (string path, float time)[]
+        {
+            //("Cutscene/path/to/img", time),
+
+            ("Cutscene/TestImages/blue", 2f),
+            ("Cutscene/TestImages/green", 3f),
+            ("Cutscene/TestImages/red", 4f)
+        };
 
         /// ================================================================================
         /// ==================================== Misc ======================================

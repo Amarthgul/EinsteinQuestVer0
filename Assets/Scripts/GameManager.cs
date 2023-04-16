@@ -53,9 +53,10 @@ namespace EinsteinQuest
         // Start is called before the first frame update
         void Start()
         {
-            CreateShaderList(); 
+            CreateShaderList();
 
-            ShuffleColor();
+            //ShuffleColor();
+            currentDimension = Globals.Colors.A;
             RespawnAcorn();
 
         }
@@ -94,6 +95,7 @@ namespace EinsteinQuest
                 newAcornModel.AddComponent<Acorn>();
                 newAcornModel.GetComponent<Acorn>().ConnectShaders(acornShaders);
                 newAcornModel.GetComponent<Acorn>().thisAcornModel = newAcornModel;
+                Debug.Log(currentDimension);
                 newAcornModel.GetComponent<Acorn>().Collapse(currentDimension);
 
                 // Add acorn class into the list 

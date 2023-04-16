@@ -3,12 +3,16 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+/Assembly-CSharp.csproj
+
 # User-specific files
 *.rsuser
 *.suo
 *.user
 *.userosscache
 *.sln.docstates
+*.sln
+
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -79,7 +83,6 @@ StyleCopReport.xml
 *_p.c
 *_h.h
 *.ilk
-*.meta
 *.obj
 *.iobj
 *.pch

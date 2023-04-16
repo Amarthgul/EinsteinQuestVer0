@@ -35,7 +35,8 @@ namespace EinsteinQuest
         /// ===============================================================
         /// ======================= Squirrel Stats ========================
 
-        public Globals.Colors squirrelColor { get; set; }
+        //public Globals.Colors squirrelColor { get; set; }
+        [SerializeField] public Globals.Colors squirrelColor;
 
         public bool acronHold = false;
 

@@ -67,19 +67,34 @@ namespace EinsteinQuest
         public void Collapse(Globals.Colors ObserverDimension)
         {
             Debug.Log("Try to collapse");
+            Debug.Log(ObserverDimension.ToString());
 
-            int choice = Globals.RNG.Next() % Globals.ACORN_CHOICE_PER_DIM; 
+            int choice = Globals.RNG.Next() % Globals.ACORN_CHOICE_PER_DIM;
+            bool squirrelAcornDontMatch = !(ObserverDimension == Globals.ColorStates[currentState]);
 
             switch (ObserverDimension)
             {
                 case Globals.Colors.R:
-                    currentState = Globals.Reds[choice];
+                    if (squirrelAcornDontMatch)
+                    {
+                        currentState = Globals.Reds[choice];
+                    }
                     break;
                 case Globals.Colors.G:
-                    currentState = Globals.Greens[choice];
+                    if (squirrelAcornDontMatch)
+                    {
+                        currentState = Globals.Greens[choice];
+                    }
                     break;
                 case Globals.Colors.B:
-                    currentState = Globals.Blues[choice];
+                    if (squirrelAcornDontMatch)
+                    {
+                        currentState = Globals.Blues[choice];
+                    }
+                    break;
+                case Globals.Colors.A:
+                    choice = Globals.RNG.Next() % 6;
+                    currentState = Globals.All[choice];
                     break;
                 default:
                     break;

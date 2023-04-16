@@ -14,6 +14,7 @@ namespace EinsteinQuest
         /// ===============================================================
         /// ========================== Settings =====-=====================
         public Globals.Colors currentDimension { get; set; }
+        public bool gameOn = false;
 
         /// ===============================================================
         /// ==================== Serialized variables ===================== 

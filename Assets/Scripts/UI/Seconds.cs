@@ -10,8 +10,10 @@ namespace EinsteinQuest
         private VisualElement root;
         private Label seconds;
 
-        [SerializeField] float startTime;
-        public void OnEnable()
+        public bool gameDone;
+
+        [SerializeField] public float startTime;
+        public void FirstSwitch()
         {
             root = GetComponent<UIDocument>().rootVisualElement;
             var con = root.Query<VisualElement>("TimeContainer").First();
@@ -39,6 +41,7 @@ namespace EinsteinQuest
                 if (round <= 0)
                 {
                     display = "0.00";
+                    gameDone = true;
                 }
                 seconds.text = display;
                 yield return null;

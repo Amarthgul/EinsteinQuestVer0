@@ -16,8 +16,9 @@ namespace EinsteinQuest
         [SerializeField] private Squirrel sNiels;
         [SerializeField] private Squirrel sErwin;
         [SerializeField] private Squirrel sAlbert;
-        public void OnEnable()
+        public void FirstSwitch()
         {
+            Debug.Log("I am enabled in Score!");
             root = GetComponent<UIDocument>().rootVisualElement;
 
             var niels = root.Query<VisualElement>("Niels").First();

@@ -1,0 +1,24 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement style="height: 100%;">
+        <ui:VisualElement name="TimeContainer" style="position: relative; height: 20%; top: auto; bottom: auto;">
+            <ui:VisualElement name="center" style="width: 25%; height: 100%; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; margin-left: 37.5%; margin-right: 37.5%;">
+                <ui:Label text="Time" display-tooltip-when-elided="true" name="Label" style="-unity-text-align: upper-center; font-size: 50px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; color: rgba(255, 255, 255, 255); -unity-font-style: bold;" />
+                <ui:Label text="xx:xx" display-tooltip-when-elided="true" name="Seconds" style="font-size: 100%; -unity-text-align: upper-center; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; height: auto; color: rgba(255, 255, 255, 255); -unity-font-style: bold;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="ScoreContainer" style="flex-direction: row; height: 30%; bottom: 0; top: 70%; position: absolute; width: 100%;">
+            <ui:VisualElement name="Niels" style="width: 33.33%; min-height: auto; height: 100%; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 50px; padding-right: 50px; padding-top: 50px; padding-bottom: 50px;">
+                <ui:Label text="0" display-tooltip-when-elided="true" name="num" style="-unity-text-align: upper-center; font-size: 80px; color: rgb(255, 255, 255);" />
+                <ui:Label text="Niels" display-tooltip-when-elided="true" name="NielsScore" style="-unity-text-align: upper-center; font-size: 100px; color: rgb(255, 255, 255); -unity-font-style: bold;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="Erwin" style="width: 33.33%; font-size: 100px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; height: 100%; padding-left: 50px; padding-right: 50px; padding-top: 50px; padding-bottom: 50px;">
+                <ui:Label text="0" display-tooltip-when-elided="true" name="num" style="-unity-text-align: upper-center; height: auto; justify-content: flex-start; font-size: 80px; color: rgb(255, 255, 255);" />
+                <ui:Label text="Erwin" display-tooltip-when-elided="true" name="ErwinScore" style="-unity-text-align: upper-center; height: auto; justify-content: flex-start; color: rgb(255, 255, 255); -unity-font-style: bold;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="Albert" style="width: 33.33%; flex-direction: column; font-size: 100px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; height: 100%; padding-left: 50px; padding-right: 50px; padding-top: 50px; padding-bottom: 50px; -unity-text-align: upper-center;">
+                <ui:Label text="0" display-tooltip-when-elided="true" name="num" style="-unity-text-align: upper-center; height: auto; justify-content: flex-start; font-size: 80px; color: rgb(255, 255, 255);" />
+                <ui:Label text="Albert" display-tooltip-when-elided="true" name="AlbertScore" style="-unity-text-align: upper-center; height: auto; justify-content: flex-start; color: rgb(255, 255, 255); -unity-font-style: bold;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -14,6 +14,7 @@ namespace EinsteinQuest
         /// ===============================================================
         /// ========================== Settings =====-=====================
         public Globals.Colors currentDimension { get; set; }
+        public bool gameOn = false;
 
         /// ===============================================================
         /// ==================== Serialized variables ===================== 
@@ -169,6 +170,7 @@ namespace EinsteinQuest
                         a.Collapse(squirrel.squirrelColor);
                         a.observerID = squirrel.squirrelID;
                         a.pickUpProtection = true;
+                        squirrel.score++;
 
                         return true;
                     }

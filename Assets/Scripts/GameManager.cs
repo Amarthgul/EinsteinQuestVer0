@@ -169,6 +169,7 @@ namespace EinsteinQuest
                         a.Collapse(squirrel.squirrelColor);
                         a.observerID = squirrel.squirrelID;
                         a.pickUpProtection = true;
+                        squirrel.score++;
 
                         return true;
                     }

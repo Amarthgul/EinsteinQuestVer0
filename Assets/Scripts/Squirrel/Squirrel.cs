@@ -40,7 +40,9 @@ namespace EinsteinQuest
 
         public bool acronHold = false;
 
-        public int squirrelID = 123456; 
+        public int squirrelID = 123456;
+
+        public int score = 0;
 
         // CPU
         public bool cpuControl;
@@ -139,7 +141,6 @@ namespace EinsteinQuest
         public void PickupAttempt()
         {
             acronHold = gm.SquirrelInteractQuery(this);
-
         }
     }
 }

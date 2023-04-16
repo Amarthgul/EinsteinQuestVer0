@@ -9,46 +9,27 @@ namespace EinsteinQuest
         [SerializeField] Squirrel albertRedSquirrel;
         [SerializeField] Squirrel nielsBlueSquirrel;
         [SerializeField] Squirrel erwinGreenSquirrel;
+        private int numberOfHumanPlayers = 0;
         private List<Squirrel> squirrels = new List<Squirrel>();
-
-        private static SquirrelManager instance = null;
-
-        private SquirrelManager()
-        {
-        }
-
-        public static SquirrelManager Instance
-        {
-            get
-            {
-                if (instance == null)
-                {
-                    instance = new SquirrelManager();
-                }
-                return instance;
-            }
-        }
         void Start() {
             squirrels.Add(albertRedSquirrel);
             squirrels.Add(nielsBlueSquirrel);
             squirrels.Add(erwinGreenSquirrel);
         }
-        // Start is called before the first frame update
-        public bool HasAvailableSquirrel()
-        {
-            foreach(Squirrel squirrel in squirrels) {
-                if(squirrel.cpuControl) {
-                    return true;
-                }
-            }
-            return false;
-        }
         public Squirrel GetAvailableSquirrel() {
-            foreach(Squirrel squirrel in squirrels) {
-                if(squirrel.cpuControl) {
-                    return squirrel;
-                }
+            ++numberOfHumanPlayers;
+            switch(numberOfHumanPlayers) {
+                case 1:
+                    Debug.Log("returning niels");
+                    return nielsBlueSquirrel;
+                case 2:
+                    Debug.Log("returning albert");
+                    return albertRedSquirrel;
+                case 3:
+                    Debug.Log("returning erwin");
+                    return erwinGreenSquirrel;
             }
+            Debug.Log("returning null");
             return null;
         }
 

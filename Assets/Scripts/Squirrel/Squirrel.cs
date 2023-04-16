@@ -64,11 +64,22 @@ namespace EinsteinQuest
         {
             cpuMovement = new CPUMovementController(this, cpuControl);
         }
+        public void MoveSquirrel(float x, float y) {
+            if(!acronHold) {
+                x /= speedNormalizer;
+                y /= speedNormalizer;
+                UpdateDirection(x, y);
+                UpdatePosition(x, y);
+            }
+        }
+        public void Observe() {
+            PickupAttempt();
+        }
 
         // Update is called once per frame
         void Update()
         {
-            if(!cpuControl) {
+            /**if(!cpuControl) {
                 float movementX = joystickMovement.ReadValue<Vector2>().x / speedNormalizer;
                 float movementZ = joystickMovement.ReadValue<Vector2>().y / speedNormalizer;
 
@@ -84,13 +95,8 @@ namespace EinsteinQuest
                     UpdateDirection(movementX, movementZ);
                     UpdatePosition(movementX, movementZ);
                 }
-            }
-            else {
-                bool joinLeave = joinLeavePress.WasPressedThisFrame();
-                if(joinLeave == true) {
-                    Debug.Log("changing to player control");
-                    cpuControl = false;
-                }
+            } **/
+            if(cpuControl) {
                 cpuMovement.Update();
             }
         }

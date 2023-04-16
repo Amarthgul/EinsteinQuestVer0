@@ -39,7 +39,6 @@ namespace EinsteinQuest
         [SerializeField] public Globals.Colors squirrelColor;
 
         public bool acronHold = false;
-
         public int squirrelID = 123456; 
 
         // CPU

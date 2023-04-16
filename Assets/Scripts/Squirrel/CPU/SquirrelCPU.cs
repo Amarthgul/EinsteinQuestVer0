@@ -9,7 +9,7 @@ public class CPUMovementController {
     public ICPUState state;
     public Transform transform;
     public Vision acornVision, obstacleVision;
-    public static string ACORN_TAG = "Acorn", OBSTACLE_TAG = "Obstacle";
+    public const string ACORN_TAG = "Acorn", OBSTACLE_TAG = "Obstacle";
     public CPUMovementController(Squirrel squirrel, bool enabled) {
         this.squirrel = squirrel;
         this.player = squirrel.gameObject;

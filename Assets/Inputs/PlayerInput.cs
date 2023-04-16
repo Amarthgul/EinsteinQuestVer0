@@ -145,6 +145,248 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
             ]
         },
         {
+            ""name"": ""Player2"",
+            ""id"": ""bd00acf5-11f0-48e4-a05b-f623f3479a3a"",
+            ""actions"": [
+                {
+                    ""name"": ""JoystickMovement"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""d0621844-70a0-4002-87fb-5cde3ac2efa7"",
+                    ""expectedControlType"": ""Stick"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""KeyboardMovement"",
+                    ""type"": ""Button"",
+                    ""id"": ""69945751-44b5-4e21-814e-306f78819b40"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Observe"",
+                    ""type"": ""Button"",
+                    ""id"": ""22c1e956-e0b5-451f-9af0-64a2b81e85b1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""JoinLeaveGame"",
+                    ""type"": ""Button"",
+                    ""id"": ""7416665b-2ec9-4de2-8ff6-3093bf8f291b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""731a9337-a3e9-4a8b-812e-3a0c74c7354e"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""JoystickMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d5ab2c10-cb8a-4cfa-a58d-21fc4bcf7880"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""KeyboardMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""072106ca-7493-4557-a122-f6d546f9f51e"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""KeyboardMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d213fb4c-3c57-4dd4-aa4b-4a617185d74e"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""KeyboardMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c3a15c66-69f5-4bd4-a269-6df0cf6cfb59"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""KeyboardMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ba0e92f7-9ab6-4ed2-a75b-8f9d0968c820"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Observe"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b260f18a-29c3-4772-b6ec-ae77774858d8"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""JoinLeaveGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Player3"",
+            ""id"": ""6353d483-f12f-490a-96c6-448cbc2ba2ba"",
+            ""actions"": [
+                {
+                    ""name"": ""JoystickMovement"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""32bfc7c1-a4db-4673-9ddf-c4ba9c92da67"",
+                    ""expectedControlType"": ""Stick"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""KeyboardMovement"",
+                    ""type"": ""Button"",
+                    ""id"": ""77070602-61cd-49c2-a0d8-c347fa5ce35b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Observe"",
+                    ""type"": ""Button"",
+                    ""id"": ""b2e8f158-ff29-402e-8e22-76e29652e564"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""JoinLeaveGame"",
+                    ""type"": ""Button"",
+                    ""id"": ""20371a6d-7d5b-41ae-8739-2e29c6084e25"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""94eac3d7-0433-4105-add1-7bfbf3d1f8ff"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""JoystickMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c5387324-9029-4812-81e4-a6993ab62cf0"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""KeyboardMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""080b5258-c2ad-4b09-83a7-353bbd647c65"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""KeyboardMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0eabe454-357e-4b43-8a09-3b52af6e4bfa"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""KeyboardMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b4826fd0-4aa3-4f71-aa4a-c7850ffb4fa2"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""KeyboardMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8e2012ae-e35d-45f9-9ab6-7a383a84cc06"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Observe"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8787f98b-dd25-445b-913b-70bd7afbef5e"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""JoinLeaveGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
             ""name"": ""Global"",
             ""id"": ""7b896438-0929-4b37-83e2-cf09b012c185"",
             ""actions"": [
@@ -181,6 +423,18 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         m_Player1_KeyboardMovement = m_Player1.FindAction("KeyboardMovement", throwIfNotFound: true);
         m_Player1_Observe = m_Player1.FindAction("Observe", throwIfNotFound: true);
         m_Player1_JoinLeaveGame = m_Player1.FindAction("JoinLeaveGame", throwIfNotFound: true);
+        // Player2
+        m_Player2 = asset.FindActionMap("Player2", throwIfNotFound: true);
+        m_Player2_JoystickMovement = m_Player2.FindAction("JoystickMovement", throwIfNotFound: true);
+        m_Player2_KeyboardMovement = m_Player2.FindAction("KeyboardMovement", throwIfNotFound: true);
+        m_Player2_Observe = m_Player2.FindAction("Observe", throwIfNotFound: true);
+        m_Player2_JoinLeaveGame = m_Player2.FindAction("JoinLeaveGame", throwIfNotFound: true);
+        // Player3
+        m_Player3 = asset.FindActionMap("Player3", throwIfNotFound: true);
+        m_Player3_JoystickMovement = m_Player3.FindAction("JoystickMovement", throwIfNotFound: true);
+        m_Player3_KeyboardMovement = m_Player3.FindAction("KeyboardMovement", throwIfNotFound: true);
+        m_Player3_Observe = m_Player3.FindAction("Observe", throwIfNotFound: true);
+        m_Player3_JoinLeaveGame = m_Player3.FindAction("JoinLeaveGame", throwIfNotFound: true);
         // Global
         m_Global = asset.FindActionMap("Global", throwIfNotFound: true);
         m_Global_Quit = m_Global.FindAction("Quit", throwIfNotFound: true);
@@ -297,6 +551,120 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     }
     public Player1Actions @Player1 => new Player1Actions(this);
 
+    // Player2
+    private readonly InputActionMap m_Player2;
+    private IPlayer2Actions m_Player2ActionsCallbackInterface;
+    private readonly InputAction m_Player2_JoystickMovement;
+    private readonly InputAction m_Player2_KeyboardMovement;
+    private readonly InputAction m_Player2_Observe;
+    private readonly InputAction m_Player2_JoinLeaveGame;
+    public struct Player2Actions
+    {
+        private @PlayerInput m_Wrapper;
+        public Player2Actions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @JoystickMovement => m_Wrapper.m_Player2_JoystickMovement;
+        public InputAction @KeyboardMovement => m_Wrapper.m_Player2_KeyboardMovement;
+        public InputAction @Observe => m_Wrapper.m_Player2_Observe;
+        public InputAction @JoinLeaveGame => m_Wrapper.m_Player2_JoinLeaveGame;
+        public InputActionMap Get() { return m_Wrapper.m_Player2; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(Player2Actions set) { return set.Get(); }
+        public void SetCallbacks(IPlayer2Actions instance)
+        {
+            if (m_Wrapper.m_Player2ActionsCallbackInterface != null)
+            {
+                @JoystickMovement.started -= m_Wrapper.m_Player2ActionsCallbackInterface.OnJoystickMovement;
+                @JoystickMovement.performed -= m_Wrapper.m_Player2ActionsCallbackInterface.OnJoystickMovement;
+                @JoystickMovement.canceled -= m_Wrapper.m_Player2ActionsCallbackInterface.OnJoystickMovement;
+                @KeyboardMovement.started -= m_Wrapper.m_Player2ActionsCallbackInterface.OnKeyboardMovement;
+                @KeyboardMovement.performed -= m_Wrapper.m_Player2ActionsCallbackInterface.OnKeyboardMovement;
+                @KeyboardMovement.canceled -= m_Wrapper.m_Player2ActionsCallbackInterface.OnKeyboardMovement;
+                @Observe.started -= m_Wrapper.m_Player2ActionsCallbackInterface.OnObserve;
+                @Observe.performed -= m_Wrapper.m_Player2ActionsCallbackInterface.OnObserve;
+                @Observe.canceled -= m_Wrapper.m_Player2ActionsCallbackInterface.OnObserve;
+                @JoinLeaveGame.started -= m_Wrapper.m_Player2ActionsCallbackInterface.OnJoinLeaveGame;
+                @JoinLeaveGame.performed -= m_Wrapper.m_Player2ActionsCallbackInterface.OnJoinLeaveGame;
+                @JoinLeaveGame.canceled -= m_Wrapper.m_Player2ActionsCallbackInterface.OnJoinLeaveGame;
+            }
+            m_Wrapper.m_Player2ActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @JoystickMovement.started += instance.OnJoystickMovement;
+                @JoystickMovement.performed += instance.OnJoystickMovement;
+                @JoystickMovement.canceled += instance.OnJoystickMovement;
+                @KeyboardMovement.started += instance.OnKeyboardMovement;
+                @KeyboardMovement.performed += instance.OnKeyboardMovement;
+                @KeyboardMovement.canceled += instance.OnKeyboardMovement;
+                @Observe.started += instance.OnObserve;
+                @Observe.performed += instance.OnObserve;
+                @Observe.canceled += instance.OnObserve;
+                @JoinLeaveGame.started += instance.OnJoinLeaveGame;
+                @JoinLeaveGame.performed += instance.OnJoinLeaveGame;
+                @JoinLeaveGame.canceled += instance.OnJoinLeaveGame;
+            }
+        }
+    }
+    public Player2Actions @Player2 => new Player2Actions(this);
+
+    // Player3
+    private readonly InputActionMap m_Player3;
+    private IPlayer3Actions m_Player3ActionsCallbackInterface;
+    private readonly InputAction m_Player3_JoystickMovement;
+    private readonly InputAction m_Player3_KeyboardMovement;
+    private readonly InputAction m_Player3_Observe;
+    private readonly InputAction m_Player3_JoinLeaveGame;
+    public struct Player3Actions
+    {
+        private @PlayerInput m_Wrapper;
+        public Player3Actions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @JoystickMovement => m_Wrapper.m_Player3_JoystickMovement;
+        public InputAction @KeyboardMovement => m_Wrapper.m_Player3_KeyboardMovement;
+        public InputAction @Observe => m_Wrapper.m_Player3_Observe;
+        public InputAction @JoinLeaveGame => m_Wrapper.m_Player3_JoinLeaveGame;
+        public InputActionMap Get() { return m_Wrapper.m_Player3; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(Player3Actions set) { return set.Get(); }
+        public void SetCallbacks(IPlayer3Actions instance)
+        {
+            if (m_Wrapper.m_Player3ActionsCallbackInterface != null)
+            {
+                @JoystickMovement.started -= m_Wrapper.m_Player3ActionsCallbackInterface.OnJoystickMovement;
+                @JoystickMovement.performed -= m_Wrapper.m_Player3ActionsCallbackInterface.OnJoystickMovement;
+                @JoystickMovement.canceled -= m_Wrapper.m_Player3ActionsCallbackInterface.OnJoystickMovement;
+                @KeyboardMovement.started -= m_Wrapper.m_Player3ActionsCallbackInterface.OnKeyboardMovement;
+                @KeyboardMovement.performed -= m_Wrapper.m_Player3ActionsCallbackInterface.OnKeyboardMovement;
+                @KeyboardMovement.canceled -= m_Wrapper.m_Player3ActionsCallbackInterface.OnKeyboardMovement;
+                @Observe.started -= m_Wrapper.m_Player3ActionsCallbackInterface.OnObserve;
+                @Observe.performed -= m_Wrapper.m_Player3ActionsCallbackInterface.OnObserve;
+                @Observe.canceled -= m_Wrapper.m_Player3ActionsCallbackInterface.OnObserve;
+                @JoinLeaveGame.started -= m_Wrapper.m_Player3ActionsCallbackInterface.OnJoinLeaveGame;
+                @JoinLeaveGame.performed -= m_Wrapper.m_Player3ActionsCallbackInterface.OnJoinLeaveGame;
+                @JoinLeaveGame.canceled -= m_Wrapper.m_Player3ActionsCallbackInterface.OnJoinLeaveGame;
+            }
+            m_Wrapper.m_Player3ActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @JoystickMovement.started += instance.OnJoystickMovement;
+                @JoystickMovement.performed += instance.OnJoystickMovement;
+                @JoystickMovement.canceled += instance.OnJoystickMovement;
+                @KeyboardMovement.started += instance.OnKeyboardMovement;
+                @KeyboardMovement.performed += instance.OnKeyboardMovement;
+                @KeyboardMovement.canceled += instance.OnKeyboardMovement;
+                @Observe.started += instance.OnObserve;
+                @Observe.performed += instance.OnObserve;
+                @Observe.canceled += instance.OnObserve;
+                @JoinLeaveGame.started += instance.OnJoinLeaveGame;
+                @JoinLeaveGame.performed += instance.OnJoinLeaveGame;
+                @JoinLeaveGame.canceled += instance.OnJoinLeaveGame;
+            }
+        }
+    }
+    public Player3Actions @Player3 => new Player3Actions(this);
+
     // Global
     private readonly InputActionMap m_Global;
     private IGlobalActions m_GlobalActionsCallbackInterface;
@@ -330,6 +698,20 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     }
     public GlobalActions @Global => new GlobalActions(this);
     public interface IPlayer1Actions
+    {
+        void OnJoystickMovement(InputAction.CallbackContext context);
+        void OnKeyboardMovement(InputAction.CallbackContext context);
+        void OnObserve(InputAction.CallbackContext context);
+        void OnJoinLeaveGame(InputAction.CallbackContext context);
+    }
+    public interface IPlayer2Actions
+    {
+        void OnJoystickMovement(InputAction.CallbackContext context);
+        void OnKeyboardMovement(InputAction.CallbackContext context);
+        void OnObserve(InputAction.CallbackContext context);
+        void OnJoinLeaveGame(InputAction.CallbackContext context);
+    }
+    public interface IPlayer3Actions
     {
         void OnJoystickMovement(InputAction.CallbackContext context);
         void OnKeyboardMovement(InputAction.CallbackContext context);

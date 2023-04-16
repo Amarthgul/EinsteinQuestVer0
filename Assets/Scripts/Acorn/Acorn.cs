@@ -99,7 +99,19 @@ namespace EinsteinQuest
                 default:
                     break;
             }
-
+            GameObject x = thisAcornModel.transform.GetChild(0).GetChild(0).gameObject;
+            switch(currentState) {
+                // ensure X is disabled on prefab if this is not an anti acorn
+                case Globals.AcornStates.Red:
+                case Globals.AcornStates.Blue:
+                case Globals.AcornStates.Green:
+                    x.SetActive(false);
+                    break;
+                // this is an anti-acorn, enable the X to show on the prefab.
+                default:
+                    x.SetActive(true);
+                    break;
+            }
             UpdateShader();
         }
 

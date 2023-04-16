@@ -37,24 +37,24 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\_GUI.cs" />
-     <Compile Include="Assets\Scripts\Squirrel\CPU\SquirrelAcornTargetState.cs" />
-     <Compile Include="Assets\Scripts\Squirrel\CPU\ICPUState.cs" />
      <Compile Include="Assets\Inputs\PlayerInput.cs" />
      <Compile Include="Assets\Scripts\Globals.cs" />
-     <Compile Include="Assets\Scripts\Squirrel\CPU\SquirrelCPU.cs" />
      <Compile Include="Assets\Scripts\Squirrel\SquirrelMovement.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
-     <Compile Include="Assets\Scripts\Input\SquirrelControlWrapper.cs" />
      <Compile Include="Assets\Scripts\Acorn\Acorn.cs" />
-     <Compile Include="Assets\Scripts\Squirrel\CPU\SquirrelObserveState.cs" />
-     <Compile Include="Assets\Scripts\Squirrel\CPU\SquirrelObstacleAvoidanceState.cs" />
      <Compile Include="Assets\Scripts\CutScenePlayer.cs" />
-     <Compile Include="Assets\Scripts\Squirrel\SquirrelManager.cs" />
      <Compile Include="Assets\Scripts\QuitHandler.cs" />
-     <Compile Include="Assets\Scripts\Squirrel\CPU\Vision.cs" />
      <Compile Include="Assets\Scripts\Squirrel\Squirrel.cs" />
-     <Compile Include="Assets\Scripts\Squirrel\CPU\SquirrelWanderState.cs" />
      <Compile Include="Assets\Scripts\Input\PlayerManager.cs" />
+     <Compile Include="Assets\Scripts\Squirrel\CPU\SquirrelCPU.cs" />
+     <Compile Include="Assets\Scripts\Squirrel\CPU\SquirrelWanderState.cs" />
+     <Compile Include="Assets\Scripts\Squirrel\CPU\SquirrelAcornTargetState.cs" />
+     <Compile Include="Assets\Scripts\Squirrel\CPU\SquirrelObstacleAvoidanceState.cs" />
+     <Compile Include="Assets\Scripts\Squirrel\CPU\SquirrelObserveState.cs" />
+     <Compile Include="Assets\Scripts\Squirrel\CPU\ICPUState.cs" />
+     <Compile Include="Assets\Scripts\Input\SquirrelControlWrapper.cs" />
+     <Compile Include="Assets\Scripts\Squirrel\SquirrelManager.cs" />
+     <Compile Include="Assets\Scripts\Squirrel\CPU\Vision.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

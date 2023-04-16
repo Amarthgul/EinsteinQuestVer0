@@ -9,8 +9,7 @@ namespace EinsteinQuest
     {
         /// ===============================================================
         /// ======================= Input actions =========================
-        private InputAction joystickMovement;
-        private InputAction observePress;
+        private InputAction joystickMovement, observePress, joinLeavePress;
 
         /// ===============================================================
         /// ========================== Constants ==========================
@@ -44,25 +43,27 @@ namespace EinsteinQuest
         public int squirrelID = 123456; 
 
         // CPU
-        public bool cpuControl = true;
+        public bool cpuControl;
         public CPUMovementController cpuMovement;
         /// ===============================================================
         /// =========================== Methods =========================== 
         /// ===============================================================
 
-        public void Initialize(InputAction Joystick, InputAction Observe)
+        public void Initialize(InputAction Joystick, InputAction Observe, InputAction JoinLeave)
         {
             joystickMovement = Joystick;
             observePress = Observe;
+            joinLeavePress = JoinLeave;
             joystickMovement.Enable();
             observePress.Enable();
+            joinLeavePress.Enable();
             squirrelColor = Globals.Colors.R; // For testing purpose, set it to Red for now
         }
 
         // Start is called before the first frame update
         void Start()
         {
-            cpuMovement = new CPUMovementController(this, true);
+            cpuMovement = new CPUMovementController(this, cpuControl);
         }
 
         // Update is called once per frame
@@ -86,6 +87,11 @@ namespace EinsteinQuest
                 }
             }
             else {
+                bool joinLeave = joinLeavePress.WasPressedThisFrame();
+                if(joinLeave == true) {
+                    Debug.Log("changing to player control");
+                    cpuControl = false;
+                }
                 cpuMovement.Update();
             }
         }

@@ -66,6 +66,9 @@ namespace EinsteinQuest
         public void Observe() {
             PickupAttempt();
         }
+        public void Consume() {
+            ConsumeAttempt();
+        }
 
         // Update is called once per frame
         void Update()
@@ -118,6 +121,10 @@ namespace EinsteinQuest
         public void PickupAttempt()
         {
             acronHold = gm.SquirrelInteractQuery(this);
+        }
+        void ConsumeAttempt()
+        {
+            
         }
         public void TryStartGame() {
             if(!uiManager.started) {

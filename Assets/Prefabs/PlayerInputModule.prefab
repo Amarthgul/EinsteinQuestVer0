@@ -95,42 +95,6 @@ MonoBehaviour:
     m_ActionId: cf2127c5-53c2-4c28-b578-b8e179872fbf
     m_ActionName: Player1/Observe[/SwitchProControllerHID/buttonSouth]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 5bcf6aa3-d6af-444d-9989-45a87ad11e54
-    m_ActionName: Player1/JoinLeaveGame[/SwitchProControllerHID/start]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: d0621844-70a0-4002-87fb-5cde3ac2efa7
-    m_ActionName: Player2/JoystickMovement[/SwitchProControllerHID/leftStick]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 69945751-44b5-4e21-814e-306f78819b40
-    m_ActionName: Player2/KeyboardMovement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 22c1e956-e0b5-451f-9af0-64a2b81e85b1
-    m_ActionName: Player2/Observe[/SwitchProControllerHID/buttonSouth]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 7416665b-2ec9-4de2-8ff6-3093bf8f291b
-    m_ActionName: Player2/JoinLeaveGame[/SwitchProControllerHID/start]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 32bfc7c1-a4db-4673-9ddf-c4ba9c92da67
-    m_ActionName: Player3/JoystickMovement[/SwitchProControllerHID/leftStick]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 77070602-61cd-49c2-a0d8-c347fa5ce35b
-    m_ActionName: Player3/KeyboardMovement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: b2e8f158-ff29-402e-8e22-76e29652e564
-    m_ActionName: Player3/Observe[/SwitchProControllerHID/buttonSouth]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 20371a6d-7d5b-41ae-8739-2e29c6084e25
-    m_ActionName: Player3/JoinLeaveGame[/SwitchProControllerHID/start]
-  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
@@ -146,6 +110,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 4084f1eb-0901-4f85-8c04-c54107141e4c
     m_ActionName: Global/Quit[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6462829388399601000}
+        m_TargetAssemblyTypeName: EinsteinQuest.SquirrelControlWrapper, Assembly-CSharp
+        m_MethodName: ConsumeAction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 319af0f8-b452-4465-aed6-109ff161cc05
+    m_ActionName: Player1/Consume[/SwitchProControllerHID/buttonEast,/SwitchProControllerHID1/buttonEast]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player1

@@ -29,8 +29,9 @@ namespace EinsteinQuest
             endgame.enabled = false;
         }
         public void StartUI() {
+            Debug.Log("accessing here!!!!!!");
             started = true;
-            menu.enabled = false;
+            menu.rootVisualElement.style.display = DisplayStyle.None;
             active.enabled = true;
             
             score.FirstSwitch();

@@ -401,6 +401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisSquirrel: {fileID: 389520126}
+  uiManager: {fileID: 453613327}
   gm: {fileID: 2009833862}
   speedNormalizer: 1
   squirrelColor: 1
@@ -519,6 +520,7 @@ MonoBehaviour:
   menu: {fileID: 1311433830}
   endgame: {fileID: 987444524}
   gm: {fileID: 2009833862}
+  started: 0
 --- !u!1001 &526816679
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1188,7 +1190,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1812573962}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1311433830
 MonoBehaviour:
@@ -1238,7 +1240,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1812573962}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1387239986
 MonoBehaviour:
@@ -1407,6 +1409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisSquirrel: {fileID: 1439861374}
+  uiManager: {fileID: 453613327}
   gm: {fileID: 2009833862}
   speedNormalizer: 1
   squirrelColor: 0
@@ -1491,8 +1494,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1387239985}
   - {fileID: 1311433829}
+  - {fileID: 1387239985}
   - {fileID: 987444523}
   m_Father: {fileID: 0}
   m_RootOrder: 9
@@ -1665,6 +1668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisSquirrel: {fileID: 2117268402}
+  uiManager: {fileID: 453613327}
   gm: {fileID: 2009833862}
   speedNormalizer: 1
   squirrelColor: 2

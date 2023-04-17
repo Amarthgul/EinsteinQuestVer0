@@ -1219,7 +1219,7 @@ GameObject:
   - component: {fileID: 1387239985}
   - component: {fileID: 1387239988}
   - component: {fileID: 1387239987}
-  - component: {fileID: 1387239986}
+  - component: {fileID: 1387239989}
   m_Layer: 0
   m_Name: UIDocument
   m_TagString: Untagged
@@ -1242,20 +1242,6 @@ Transform:
   m_Father: {fileID: 1812573962}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1387239986
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1387239984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9bb319ba6c06534da32b4a5a43f7245, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameDone: 0
-  startTime: 10
 --- !u!114 &1387239987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1287,6 +1273,21 @@ MonoBehaviour:
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: ae232b8c7298fb349ace520c11d25740, type: 3}
   m_SortingOrder: 0
+--- !u!114 &1387239989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387239984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de070881e815d234ea60586ab16804b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameDone: 0
+  scoreScript: {fileID: 1387239987}
+  max: 10
 --- !u!1001 &1416509224
 PrefabInstance:
   m_ObjectHideFlags: 0

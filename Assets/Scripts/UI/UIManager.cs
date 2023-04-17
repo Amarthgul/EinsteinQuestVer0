@@ -10,7 +10,8 @@ namespace EinsteinQuest
     {
         [SerializeField] UIDocument active;
         private Score score;
-        private Seconds seconds;
+        private TotalAcorns total;
+        //private Seconds seconds;
 
         [SerializeField] UIDocument menu;
         [SerializeField] UIDocument endgame;
@@ -23,7 +24,8 @@ namespace EinsteinQuest
             started = false;
             active.enabled= false;
             score = active.GetComponent<Score>();
-            seconds = active.GetComponent<Seconds>();
+            total = active.GetComponent<TotalAcorns>();
+            //seconds = active.GetComponent<Seconds>();
 
             menu.enabled = true;
             endgame.enabled = false;
@@ -35,13 +37,15 @@ namespace EinsteinQuest
             active.enabled = true;
             
             score.FirstSwitch();
+
+            total.FirstSwitch();
             
-            seconds.FirstSwitch();
+            //seconds.FirstSwitch();
             //Debug.Log("score is enabled and active: " + score.isActiveAndEnabled);
         }
         void Update()
         {
-            if (seconds.gameDone)
+            if (total.gameDone)
             {
                 endgame.enabled = true;
                 active.enabled = false;

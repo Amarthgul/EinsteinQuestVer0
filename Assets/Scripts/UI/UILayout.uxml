@@ -1,9 +1,9 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <ui:VisualElement style="height: 100%;">
-        <ui:VisualElement name="TimeContainer" style="position: relative; height: 20%; top: auto; bottom: auto;">
+        <ui:VisualElement name="TotalContainer" style="position: relative; height: 20%; top: auto; bottom: auto;">
             <ui:VisualElement name="center" style="width: 25%; height: 100%; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; margin-left: 37.5%; margin-right: 37.5%;">
-                <ui:Label text="Time" display-tooltip-when-elided="true" name="Label" style="-unity-text-align: upper-center; font-size: 50px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; color: rgba(255, 255, 255, 255); -unity-font-style: bold;" />
-                <ui:Label text="xx:xx" display-tooltip-when-elided="true" name="Seconds" style="font-size: 100%; -unity-text-align: upper-center; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; height: auto; color: rgba(255, 255, 255, 255); -unity-font-style: bold;" />
+                <ui:Label text="Total" display-tooltip-when-elided="true" name="Label" style="-unity-text-align: upper-center; font-size: 50px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; color: rgb(255, 255, 255); -unity-font-style: bold;" />
+                <ui:Label text="0/60" display-tooltip-when-elided="true" name="TotalAcorns" style="font-size: 100%; -unity-text-align: upper-center; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; height: auto; color: rgb(255, 255, 255); -unity-font-style: bold;" />
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="ScoreContainer" style="flex-direction: row; height: 30%; bottom: 0; top: 70%; position: absolute; width: 100%;">

@@ -21,6 +21,7 @@ namespace EinsteinQuest
 
         // Squirrel model facing (0, 0, 1)
         [SerializeField] public GameObject thisSquirrel;
+        [SerializeField] UIManager uiManager;
 
         [SerializeField] private GameManager gm;
 
@@ -49,17 +50,6 @@ namespace EinsteinQuest
         /// =========================== Methods =========================== 
         /// ===============================================================
 
-        public void Initialize(InputAction Joystick, InputAction Observe, InputAction JoinLeave)
-        {
-            joystickMovement = Joystick;
-            observePress = Observe;
-            joinLeavePress = JoinLeave;
-            joystickMovement.Enable();
-            observePress.Enable();
-            joinLeavePress.Enable();
-            //squirrelColor = Globals.Colors.R; // For testing purpose, set it to Red for now
-        }
-
         // Start is called before the first frame update
         void Start()
         {
@@ -80,23 +70,6 @@ namespace EinsteinQuest
         // Update is called once per frame
         void Update()
         {
-            /**if(!cpuControl) {
-                float movementX = joystickMovement.ReadValue<Vector2>().x / speedNormalizer;
-                float movementZ = joystickMovement.ReadValue<Vector2>().y / speedNormalizer;
-
-                bool observePressed = observePress.WasPressedThisFrame();
-
-                if (observePressed)
-                {
-                    PickupAttempt();
-                }
-
-                if (!acronHold)
-                {
-                    UpdateDirection(movementX, movementZ);
-                    UpdatePosition(movementX, movementZ);
-                }
-            } **/
             if(cpuControl) {
                 cpuMovement.Update();
             }
@@ -145,6 +118,11 @@ namespace EinsteinQuest
         public void PickupAttempt()
         {
             acronHold = gm.SquirrelInteractQuery(this);
+        }
+        public void TryStartGame() {
+            if(!uiManager.started) {
+                uiManager.StartUI();
+            }
         }
     }
 }

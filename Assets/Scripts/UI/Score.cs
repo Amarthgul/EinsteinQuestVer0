@@ -36,9 +36,11 @@ namespace EinsteinQuest
             int nis = sNiels.score;
             int ers = sErwin.score;
             int als = sAlbert.score;
-            nielsScore.text = nis.ToString();
-            erwinScore.text = ers.ToString();
-            albertScore.text = als.ToString();
+            if(nielsScore != null && erwinScore.text != null && albertScore != null) {
+                nielsScore.text = nis.ToString();
+                erwinScore.text = ers.ToString();
+                albertScore.text = als.ToString();
+            }
         }
     }
 }

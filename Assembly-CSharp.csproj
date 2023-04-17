@@ -42,6 +42,7 @@
      <Compile Include="Assets\Scripts\Input\SquirrelControlWrapper.cs" />
      <Compile Include="Assets\Scripts\Squirrel\CPU\SquirrelAcornTargetState.cs" />
      <Compile Include="Assets\Inputs\PlayerInput.cs" />
+     <Compile Include="Assets\Scripts\UI\Score.cs" />
      <Compile Include="Assets\Scripts\Globals.cs" />
      <Compile Include="Assets\Scripts\Squirrel\CPU\Vision.cs" />
      <Compile Include="Assets\Scripts\Squirrel\SquirrelMovement.cs" />
@@ -52,9 +53,14 @@
      <Compile Include="Assets\Scripts\Squirrel\CPU\ICPUState.cs" />
      <Compile Include="Assets\Scripts\CutScenePlayer.cs" />
      <Compile Include="Assets\Scripts\Squirrel\SquirrelManager.cs" />
+     <Compile Include="Assets\Scripts\UI\UIManager.cs" />
+     <Compile Include="Assets\Scripts\UI\Seconds.cs" />
      <Compile Include="Assets\Scripts\QuitHandler.cs" />
      <Compile Include="Assets\Scripts\Squirrel\CPU\SquirrelObstacleAvoidanceState.cs" />
      <Compile Include="Assets\Scripts\Squirrel\Squirrel.cs" />
+     <None Include="Assets\Scripts\UI\Endgame.uxml" />
+     <None Include="Assets\Scripts\UI\UILayout.uxml" />
+     <None Include="Assets\Scripts\UI\Main Menu.uxml" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.18f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

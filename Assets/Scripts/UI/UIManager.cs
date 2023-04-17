@@ -16,38 +16,30 @@ namespace EinsteinQuest
         [SerializeField] UIDocument endgame;
         [SerializeField] GameManager gm;
 
-        private PlayerInput inputScheme;
-        private InputAction startAction;
+        public bool started;
         private bool startGame;
         void Start()
         {
-            inputScheme= new PlayerInput();
+            started = false;
             active.enabled= false;
             score = active.GetComponent<Score>();
             seconds = active.GetComponent<Seconds>();
 
             menu.enabled = true;
             endgame.enabled = false;
-            startAction = inputScheme.Player1.JoinLeaveGame;
-            startAction.Enable();
-            Debug.Log(startAction);
         }
-
+        public void StartUI() {
+            started = true;
+            menu.enabled = false;
+            active.enabled = true;
+            
+            score.FirstSwitch();
+            
+            seconds.FirstSwitch();
+            //Debug.Log("score is enabled and active: " + score.isActiveAndEnabled);
+        }
         void Update()
         {
-            startGame = startAction.WasPressedThisFrame();
-            Debug.Log(startGame);
-            if(startGame)
-            {
-                menu.enabled = false;
-                active.enabled = true;
-                
-                score.FirstSwitch();
-                
-                seconds.FirstSwitch();
-                //Debug.Log("score is enabled and active: " + score.isActiveAndEnabled);
-            }
-
             if (seconds.gameDone)
             {
                 endgame.enabled = true;

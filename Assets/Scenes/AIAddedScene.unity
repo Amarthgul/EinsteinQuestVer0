@@ -354,7 +354,7 @@ MonoBehaviour:
   m_NotificationBehavior: 3
   m_MaxPlayerCount: 3
   m_AllowJoining: 1
-  m_JoinBehavior: 0
+  m_JoinBehavior: 1
   m_PlayerJoinedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -364,13 +364,21 @@ MonoBehaviour:
   m_JoinAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 
+      m_Name: Join
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: c00c97a5-a7ee-471b-838c-a45481791c81
       m_Processors: 
       m_Interactions: 
-      m_SingletonActionBindings: []
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: 6fe8188a-e4d6-49ae-99f3-899716849b9c
+        m_Path: <Gamepad>/start
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Join
+        m_Flags: 0
       m_Flags: 0
     m_Reference: {fileID: 0}
   m_PlayerPrefab: {fileID: 6709291359231778181, guid: 69150de020357d14fb3f71b4c1532b0a, type: 3}
@@ -406,6 +414,7 @@ MonoBehaviour:
   squirrelColor: 1
   acronHold: 0
   squirrelID: 123456
+  score: 0
   cpuControl: 1
 --- !u!65 &389520131
 BoxCollider:
@@ -1187,6 +1196,7 @@ MonoBehaviour:
   squirrelColor: 0
   acronHold: 0
   squirrelID: 123456
+  score: 0
   cpuControl: 1
 --- !u!65 &1439861379
 BoxCollider:
@@ -1374,6 +1384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 135e6e932620dff4ca9dbc4227732217, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOn: 0
   acornModels:
   - {fileID: 6718040631742078621, guid: 3eafd00f23de18145bc606446f83ca78, type: 3}
   AcornRedShader: {fileID: -6465566751694194690, guid: f746a2895afb5e4448cda4ec766ae310, type: 3}
@@ -1409,6 +1420,7 @@ MonoBehaviour:
   squirrelColor: 2
   acronHold: 0
   squirrelID: 123456
+  score: 0
   cpuControl: 0
 --- !u!65 &2117268407
 BoxCollider:

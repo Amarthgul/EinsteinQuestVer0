@@ -28,7 +28,7 @@ namespace EinsteinQuest
 
             menu.enabled = true;
             endgame.enabled = false;
-            startAction = inputScheme.Player1.Observe;
+            startAction = inputScheme.Player1.JoinLeaveGame;
             startAction.Enable();
             Debug.Log(startAction);
         }

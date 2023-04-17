@@ -1,6 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <ui:VisualElement style="height: 100%;">
-        <ui:VisualElement name="background" style="position: absolute; width: 100%; height: 100%;" />
+        <ui:VisualElement name="background" style="position: absolute; width: 100%; height: 100%; background-image: resource(&apos;Cutscene/TestImages/blue&apos;);" />
         <ui:VisualElement name="HeaderCont" style="position: relative; height: 40%; top: auto; bottom: auto; margin-top: 5%;">
             <ui:VisualElement style="flex-wrap: wrap; margin-left: 0; margin-right: 0; width: 100%; height: 100%; max-width: none; padding-left: 25%; padding-right: 25%;">
                 <ui:Label text="Einstein&apos;s Quest" display-tooltip-when-elided="true" style="height: 100%; width: 100%; -unity-text-align: upper-center; flex-wrap: wrap; font-size: 200%; flex-direction: column; -unity-font-style: bold-and-italic; white-space: normal;" />
@@ -8,7 +8,7 @@
         </ui:VisualElement>
         <ui:VisualElement name="BottomCont" style="flex-direction: row; height: 30%; bottom: 0; top: 70%; position: absolute; width: 100%;">
             <ui:VisualElement name="PlayCont" style="width: 33.33%; font-size: 100px; margin-left: 33.33%; margin-right: 33.33%; margin-top: 0; margin-bottom: 0; height: 100%; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;">
-                <ui:Button text="Press Start!" display-tooltip-when-elided="true" style="margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; height: 100%; width: 100%; font-size: 100%; -unity-font-style: bold; white-space: normal;" />
+                <ui:Button text="Press Start!" display-tooltip-when-elided="true" style="margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; height: 100%; width: 100%; font-size: 100%; -unity-font-style: bold; white-space: normal; background-color: rgba(88, 88, 88, 0);" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>

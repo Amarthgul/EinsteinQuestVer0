@@ -78,9 +78,12 @@ namespace EinsteinQuest
         {
             //("Cutscene/path/to/img", time),
 
-            ("Cutscene/TestImages/blue", 2f),
+            /*("Cutscene/TestImages/blue", 2f),
             ("Cutscene/TestImages/green", 3f),
-            ("Cutscene/TestImages/red", 4f)
+            ("Cutscene/TestImages/red", 4f)*/
+            ("Cutscene/Controls", 3f),
+            ("Cutscene/Acorn", 3f),
+            ("Cutscene/QuantAcorn", 3f)
         };
 
         /// ================================================================================

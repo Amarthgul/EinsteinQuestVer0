@@ -121,7 +121,7 @@ namespace EinsteinQuest
         }
         public void TryStartGame() {
             if(!uiManager.started) {
-                uiManager.StartUI();
+                uiManager.StartCutscene();
             }
         }
     }

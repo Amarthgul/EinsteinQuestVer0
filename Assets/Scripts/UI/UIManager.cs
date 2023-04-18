@@ -56,8 +56,16 @@ namespace EinsteinQuest
             }
             if (total.gameDone)
             {
-                endgame.enabled = true;
-                active.enabled = false;
+                active.rootVisualElement.style.display = DisplayStyle.None;
+                if (csp.secondFinished)
+                {
+                    endgame.enabled = true;
+                    active.enabled = false;
+                } else if (!csp.secondStarted)
+                {
+                    csp.End();
+                    csp.secondStarted = true;
+                }
             }
         }
     }

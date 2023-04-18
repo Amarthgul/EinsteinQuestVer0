@@ -537,7 +537,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstFinished: 0
   secondFinished: 0
+  secondStarted: 0
   cutscene: {fileID: 1608940564}
+  backdrop: {fileID: 1937036663}
 --- !u!1001 &526816679
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1372,7 +1374,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameDone: 0
   scoreScript: {fileID: 1387239987}
-  max: 10
+  max: 6
 --- !u!1001 &1416509224
 PrefabInstance:
   m_ObjectHideFlags: 0

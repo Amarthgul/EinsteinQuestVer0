@@ -18,7 +18,7 @@ namespace EinsteinQuest
             this.squirrelCPU = squirrelCPU;
             timer = 5f;
             state = "observeState";
-            squirrelCPU.squirrel.PickupAttempt();
+            squirrelCPU.squirrel.acronHold = squirrelCPU.squirrel.gm.SquirrelInteractQuery(squirrelCPU.squirrel,false);
             this.previousRotation = squirrelCPU.transform.rotation;
             this.transform = squirrelCPU.transform;
             targetRotation = Quaternion.LookRotation(-transform.forward, Vector3.up);
@@ -35,10 +35,10 @@ namespace EinsteinQuest
             if(timer < 3f && state.Equals("observeState")) {
                 state = "dropState";
                 if(Random.Range(0,2) == 0) {
-                    squirrelCPU.squirrel.PickupAttempt();
+                    squirrelCPU.squirrel.acronHold = squirrelCPU.squirrel.gm.SquirrelInteractQuery(squirrelCPU.squirrel,false);
                 } 
                 else {
-                    squirrelCPU.squirrel.Consume();
+                    squirrelCPU.squirrel.gm.SquirrelInteractQuery(squirrelCPU.squirrel,true);
                 }
             } else if(timer < 2f && state.Equals("dropState")) {
                 state = "turnaroundState";

@@ -23,7 +23,7 @@ namespace EinsteinQuest
         [SerializeField] public GameObject thisSquirrel;
         [SerializeField] UIManager uiManager;
 
-        [SerializeField] private GameManager gm;
+        [SerializeField] public GameManager gm;
 
         [Space(20)]
         [Header("General")]
@@ -64,10 +64,12 @@ namespace EinsteinQuest
             }
         }
         public void Observe() {
-            PickupAttempt();
+            acronHold = gm.SquirrelInteractQuery(this, false);
         }
         public void Consume() {
-            ConsumeAttempt();
+            if(acronHold) {
+                gm.SquirrelInteractQuery(this, true);
+            }
         }
 
         // Update is called once per frame

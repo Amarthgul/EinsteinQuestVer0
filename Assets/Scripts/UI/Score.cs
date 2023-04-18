@@ -13,9 +13,9 @@ namespace EinsteinQuest
         private Label erwinScore;
         private Label albertScore;
 
-        [SerializeField] private Squirrel sNiels;
-        [SerializeField] private Squirrel sErwin;
-        [SerializeField] private Squirrel sAlbert;
+        [SerializeField] public Squirrel sNiels;
+        [SerializeField] public Squirrel sErwin;
+        [SerializeField] public Squirrel sAlbert;
         public void FirstSwitch()
         {
             Debug.Log("I am enabled in Score!");

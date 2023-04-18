@@ -16,14 +16,14 @@ namespace EinsteinQuest
         // Start is called before the first frame update
         public SquirrelObserveState(CPUMovementController squirrelCPU, GameObject acorn) {
             this.squirrelCPU = squirrelCPU;
-            timer = 5f;
+            timer = 4f;
             state = "observeState";
-            squirrelCPU.squirrel.acronHold = squirrelCPU.squirrel.gm.SquirrelInteractQuery(squirrelCPU.squirrel,false);
             this.previousRotation = squirrelCPU.transform.rotation;
             this.transform = squirrelCPU.transform;
-            targetRotation = Quaternion.LookRotation(-transform.forward, Vector3.up);
+            targetRotation = Quaternion.LookRotation(-transform.forward + new Vector3(Random.Range(-2f, 2f), 0,0), Vector3.up);
             transform.LookAt(acorn.transform);
             this.acorn = acorn;
+            squirrelCPU.squirrel.acronHold = squirrelCPU.squirrel.gm.SquirrelInteractQuery(squirrelCPU.squirrel,false);
         }
         public void Move() {
             // empty

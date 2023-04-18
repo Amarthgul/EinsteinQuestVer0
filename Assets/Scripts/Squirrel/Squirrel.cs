@@ -123,6 +123,9 @@ namespace EinsteinQuest
             if(!uiManager.started) {
                 uiManager.StartUI();
             }
+            if(acronHold) {
+                acronHold = gm.SquirrelInteractQuery(this);
+            }
         }
     }
 }

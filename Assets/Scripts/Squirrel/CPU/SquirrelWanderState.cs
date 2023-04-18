@@ -26,7 +26,6 @@ public class SquirrelAcornSearchState : ICPUState
     {
         obstacleVision.GatherHits();
         acornVision.GatherHits();
-        Debug.Log("Update");
         if(acornVision.ObstaclesFound()) {
             Debug.Log("saw acorn");
         }

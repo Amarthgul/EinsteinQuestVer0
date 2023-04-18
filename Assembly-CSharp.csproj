@@ -39,7 +39,7 @@
      <Compile Include="Assets\Scripts\Squirrel\CPU\SquirrelCPU.cs" />
      <Compile Include="Assets\Scripts\Squirrel\CPU\SquirrelWanderState.cs" />
      <Compile Include="Assets\Scripts\_GUI.cs" />
-     <Compile Include="Assets\Scripts\Input\SquirrelControlWrapper.cs" />
+     <Compile Include="Assets\Scripts\Squirrel\SquirrelControlWrapper.cs" />
      <Compile Include="Assets\Scripts\Squirrel\CPU\SquirrelAcornTargetState.cs" />
      <Compile Include="Assets\Inputs\PlayerInput.cs" />
      <Compile Include="Assets\Scripts\UI\Score.cs" />
@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\Squirrel\CPU\SquirrelObserveState.cs" />
      <Compile Include="Assets\Scripts\Acorn\Acorn.cs" />
      <Compile Include="Assets\Scripts\Squirrel\CPU\ICPUState.cs" />
+     <Compile Include="Assets\Scripts\UI\TotalAcorns.cs" />
      <Compile Include="Assets\Scripts\CutScenePlayer.cs" />
      <Compile Include="Assets\Scripts\Squirrel\SquirrelManager.cs" />
      <Compile Include="Assets\Scripts\UI\UIManager.cs" />
@@ -58,7 +59,6 @@
      <Compile Include="Assets\Scripts\QuitHandler.cs" />
      <Compile Include="Assets\Scripts\Squirrel\CPU\SquirrelObstacleAvoidanceState.cs" />
      <Compile Include="Assets\Scripts\Squirrel\Squirrel.cs" />
-     <Compile Include="Assets\Scripts\UI\TotalAcorns.cs" />
      <None Include="Assets\Scripts\UI\Endgame.uxml" />
      <None Include="Assets\Scripts\UI\UILayout.uxml" />
      <None Include="Assets\Scripts\UI\Main Menu.uxml" />

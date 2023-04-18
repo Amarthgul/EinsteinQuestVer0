@@ -110,7 +110,7 @@ namespace EinsteinQuest
         /// </summary>
         private void UpdateKeyboard()
         {
-
+            
         }
 
         /// <summary>
@@ -120,18 +120,18 @@ namespace EinsteinQuest
         /// </summary>
         public void PickupAttempt()
         {
-            acronHold = gm.SquirrelInteractQuery(this);
+            acronHold = gm.SquirrelInteractQuery(this, false);
         }
         void ConsumeAttempt()
         {
-            
+            gm.SquirrelInteractQuery(this, true);
         }
         public void TryStartGame() {
             if(!uiManager.started) {
                 uiManager.StartUI();
             }
             if(acronHold) {
-                acronHold = gm.SquirrelInteractQuery(this);
+                acronHold = gm.SquirrelInteractQuery(this, false);
             }
         }
     }

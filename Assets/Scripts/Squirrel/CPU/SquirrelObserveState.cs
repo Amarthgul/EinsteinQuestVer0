@@ -34,7 +34,12 @@ namespace EinsteinQuest
         {
             if(timer < 3f && state.Equals("observeState")) {
                 state = "dropState";
-                squirrelCPU.squirrel.PickupAttempt();
+                if(Random.Range(0,2) == 0) {
+                    squirrelCPU.squirrel.PickupAttempt();
+                } 
+                else {
+                    squirrelCPU.squirrel.Consume();
+                }
             } else if(timer < 2f && state.Equals("dropState")) {
                 state = "turnaroundState";
                 transform.rotation = previousRotation;

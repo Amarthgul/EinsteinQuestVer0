@@ -153,7 +153,7 @@ namespace EinsteinQuest
         }
         public void TryStartGame() {
             if(!uiManager.started) {
-                uiManager.StartUI();
+                uiManager.StartCutscene();
                 gm.gameState = (int) Globals.GameStates.QUANTUMFOREST;
             }
             if(acronHold) {

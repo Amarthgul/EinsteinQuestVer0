@@ -16,6 +16,7 @@ namespace EinsteinQuest
         [SerializeField] UIDocument menu;
         [SerializeField] UIDocument endgame;
         [SerializeField] GameManager gm;
+        [SerializeField] CutScenePlayer csp;
 
         public bool started;
         private bool startGame;
@@ -30,10 +31,14 @@ namespace EinsteinQuest
             menu.enabled = true;
             endgame.enabled = false;
         }
+        public void StartCutscene()
+        {
+            menu.rootVisualElement.style.display = DisplayStyle.None;
+            csp.Begin();
+        }
         public void StartUI() {
             Debug.Log("accessing here!!!!!!");
             started = true;
-            menu.rootVisualElement.style.display = DisplayStyle.None;
             active.enabled = true;
             
             score.FirstSwitch();
@@ -45,10 +50,22 @@ namespace EinsteinQuest
         }
         void Update()
         {
+            if (csp.firstFinished)
+            {
+                StartUI();
+            }
             if (total.gameDone)
             {
-                endgame.enabled = true;
-                active.enabled = false;
+                active.rootVisualElement.style.display = DisplayStyle.None;
+                if (csp.secondFinished)
+                {
+                    endgame.enabled = true;
+                    active.enabled = false;
+                } else if (!csp.secondStarted)
+                {
+                    csp.End();
+                    csp.secondStarted = true;
+                }
             }
         }
     }

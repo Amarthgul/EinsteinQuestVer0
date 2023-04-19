@@ -33,6 +33,9 @@ namespace EinsteinQuest
         [SerializeField] Shader AcornAntiGreenShader;
         [SerializeField] Shader AcornBlueShader;
         [SerializeField] Shader AcornAntiBlueShader;
+        [Header("Symbol that is displayed above squirrel")]
+        [Space(5)]
+        [SerializeField] GameObject antiXprefab;
 
         [Space(15)]
         [Header("Squirrels")]
@@ -47,6 +50,7 @@ namespace EinsteinQuest
         private List<Acorn> acorns = new List<Acorn>();
 
         private Dictionary<Globals.AcornStates, Shader> acornShaders = new Dictionary<Globals.AcornStates, Shader>();
+        public int gameState = (int) Globals.GameStates.STARTSCREEN;
 
         /// ===============================================================
         /// ========================== Methods ============================
@@ -67,7 +71,13 @@ namespace EinsteinQuest
         {
             
         }
-
+        // need to refactor this code and make respawnacorn and resetacorn share a common method
+        void ResetAcorn(Acorn a) {
+            float posX = (float)(Globals.RNG.NextDouble() - 0.5) * Globals.MAP_LENGTH;
+            float posZ = (float)(Globals.RNG.NextDouble() - 0.5) * Globals.MAP_WIDTH;
+            a.gameObject.transform.position = new Vector3(posX, Globals.ACORN_SPAWN_Z, posZ);
+            a.Collapse(currentDimension);
+        }
         /// <summary>
         /// Adds a handful of acorns onto the map. 
         /// </summary>
@@ -144,7 +154,7 @@ namespace EinsteinQuest
         /// Invoked when a squirrel tries to interact with an acorn. 
         /// </summary>
         /// <returns>True if there is an acorn to interact with.</returns>
-        public bool SquirrelInteractQuery(Squirrel squirrel)
+        public bool SquirrelInteractQuery(Squirrel squirrel, bool tryConsume)
         {
 
             foreach (Acorn a in acorns)
@@ -170,16 +180,21 @@ namespace EinsteinQuest
                         a.Collapse(squirrel.squirrelColor);
                         a.observerID = squirrel.squirrelID;
                         a.pickUpProtection = true;
-                        squirrel.score++;
 
                         return true;
                     }
                     else if (a.pickUpProtection && a.observerID == squirrel.squirrelID)
                     {
-                        // If this is the same acorn the squirrel have been holding 
+                        // If this is the same acorn the squirrel have been holding
                         a.tag = CPUMovementController.ACORN_TAG;
                         a.observerID = 0;
                         a.pickUpProtection = false;
+                        // cancel lock if consumed
+                        if(tryConsume) {
+                            a.Consume(squirrel);
+                            ResetAcorn(a);
+                            squirrel.acronHold = false;
+                        }
 
                         return false;
                     }
@@ -189,8 +204,16 @@ namespace EinsteinQuest
             // No acorn is avilable to be interacted with 
             return false;
         }
-
-
-
+        public AntiX CreateAntiXToFollowSquirrel(Squirrel squirrel) {
+            Vector3 position = squirrel.transform.position;
+            GameObject newAntiX = Instantiate(
+                    antiXprefab, 
+                    new Vector3(position.x, position.y + 0.3f, position.z), 
+                    Quaternion.identity);
+            newAntiX.AddComponent<AntiX>();
+            AntiX antiXscript = newAntiX.GetComponent<AntiX>();
+            antiXscript.SetSquirrel(squirrel);
+            return antiXscript;
+        }
     }
 }

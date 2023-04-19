@@ -32,6 +32,11 @@ namespace EinsteinQuest
                 squirrel.Observe();
             }
         }
+        public void ConsumeAction(InputAction.CallbackContext callbackContext) {
+            if(callbackContext.action.triggered) {
+                squirrel.Consume();
+            }
+        }
         void Update() {
             squirrel.MoveSquirrel(movement.x, movement.y);
         }

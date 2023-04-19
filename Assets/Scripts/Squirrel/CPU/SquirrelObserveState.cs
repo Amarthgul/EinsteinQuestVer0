@@ -16,14 +16,14 @@ namespace EinsteinQuest
         // Start is called before the first frame update
         public SquirrelObserveState(CPUMovementController squirrelCPU, GameObject acorn) {
             this.squirrelCPU = squirrelCPU;
-            timer = 5f;
+            timer = 4f;
             state = "observeState";
-            squirrelCPU.squirrel.PickupAttempt();
             this.previousRotation = squirrelCPU.transform.rotation;
             this.transform = squirrelCPU.transform;
-            targetRotation = Quaternion.LookRotation(-transform.forward, Vector3.up);
+            targetRotation = Quaternion.LookRotation(-transform.forward + new Vector3(Random.Range(-2f, 2f), 0,0), Vector3.up);
             transform.LookAt(acorn.transform);
             this.acorn = acorn;
+            squirrelCPU.squirrel.acronHold = squirrelCPU.squirrel.gm.SquirrelInteractQuery(squirrelCPU.squirrel,false);
         }
         public void Move() {
             // empty
@@ -34,7 +34,12 @@ namespace EinsteinQuest
         {
             if(timer < 3f && state.Equals("observeState")) {
                 state = "dropState";
-                squirrelCPU.squirrel.PickupAttempt();
+                if(Random.Range(0,2) == 0) {
+                    squirrelCPU.squirrel.acronHold = squirrelCPU.squirrel.gm.SquirrelInteractQuery(squirrelCPU.squirrel,false);
+                } 
+                else {
+                    squirrelCPU.squirrel.gm.SquirrelInteractQuery(squirrelCPU.squirrel,true);
+                }
             } else if(timer < 2f && state.Equals("dropState")) {
                 state = "turnaroundState";
                 transform.rotation = previousRotation;

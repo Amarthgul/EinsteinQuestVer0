@@ -33,6 +33,11 @@ namespace EinsteinQuest
         // For quick iterating access 
         public static List<Colors> ColorIterator = new List<Colors>() { Colors.R, Colors.G, Colors.B };
 
+        // squirrel
+        public const float ANTI_PENALTY_SPEED_AI = 0.6f;
+        public const float ANTI_PENALTY_SPEED_PLAYER = 0.2f;
+        public enum SquirrelStates { ANTI = 0, NORMAL =1 };
+
         /// ================================================================================
         /// ============================== Acorn and levels ================================
         /// ================================================================================
@@ -141,6 +146,7 @@ namespace EinsteinQuest
         }
         public const float RANDOM_WANDER_FACTOR = 1f;
         public const float DISTANCE_TO_OBSERVE_ACORN = 0.15f;
-
+        // Game state
+        public enum GameStates { STARTSCREEN = 0, QUANTUMFOREST =1 };
     }
 }

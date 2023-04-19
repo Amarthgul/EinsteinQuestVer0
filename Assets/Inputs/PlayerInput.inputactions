@@ -33,9 +33,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "JoinLeaveGame",
+                    "name": "Consume",
                     "type": "Button",
-                    "id": "5bcf6aa3-d6af-444d-9989-45a87ad11e54",
+                    "id": "319af0f8-b452-4465-aed6-109ff161cc05",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -111,12 +111,12 @@
                 },
                 {
                     "name": "",
-                    "id": "fc652231-4622-47a5-a78b-7ce5211feffb",
-                    "path": "<Gamepad>/start",
+                    "id": "f1cf9305-4817-4f70-8af6-c54b48fc08ee",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "JoinLeaveGame",
+                    "action": "Consume",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

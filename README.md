@@ -15,3 +15,6 @@ Game for COSI event.
 ## Version Control
 
 * TBD
+
+## Itch.io Link (Pre-alpha build 1)
+https://joshvarg.itch.io/einstein-alpha

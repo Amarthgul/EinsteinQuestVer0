@@ -87,7 +87,7 @@ namespace EinsteinQuest
             ("Cutscene/TestImages/green", 3f),
             ("Cutscene/TestImages/red", 4f)*/
 
-            ("Cutscene/Controls", 3f),
+            ("Cutscene/Controls", 5f),
             ("Cutscene/Acorn", 3f),
             ("Cutscene/QuantAcorn", 3f),
             ("Cutscene/1", 3f),

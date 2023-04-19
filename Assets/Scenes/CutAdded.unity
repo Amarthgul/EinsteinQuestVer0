@@ -408,6 +408,7 @@ MonoBehaviour:
   acronHold: 0
   squirrelID: 123456
   score: 0
+  state: 0
   cpuControl: 1
 --- !u!65 &389520131
 BoxCollider:
@@ -1049,7 +1050,7 @@ MonoBehaviour:
   m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PanelSettings: {fileID: 11400000, guid: 54d79c2422999b746b32f4144e6e34d8, type: 2}
+  m_PanelSettings: {fileID: 11400000, guid: 1d1fb9960e74a034a972224004a3874d, type: 2}
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: 05d4549dc5ccbda4c955bc8ebc5877dc, type: 3}
   m_SortingOrder: 0
@@ -1291,7 +1292,7 @@ MonoBehaviour:
   m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PanelSettings: {fileID: 11400000, guid: 54d79c2422999b746b32f4144e6e34d8, type: 2}
+  m_PanelSettings: {fileID: 11400000, guid: 1d1fb9960e74a034a972224004a3874d, type: 2}
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: dfe80824fb8d2284296c98e9d6c900b4, type: 3}
   m_SortingOrder: 0
@@ -1356,7 +1357,7 @@ MonoBehaviour:
   m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PanelSettings: {fileID: 11400000, guid: 54d79c2422999b746b32f4144e6e34d8, type: 2}
+  m_PanelSettings: {fileID: 11400000, guid: 1d1fb9960e74a034a972224004a3874d, type: 2}
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: ae232b8c7298fb349ace520c11d25740, type: 3}
   m_SortingOrder: 0
@@ -1373,6 +1374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameDone: 0
+  firstSwitch: 0
   scoreScript: {fileID: 1387239987}
   max: 6
 --- !u!1001 &1416509224
@@ -1504,6 +1506,7 @@ MonoBehaviour:
   acronHold: 0
   squirrelID: 123456
   score: 0
+  state: 0
   cpuControl: 1
 --- !u!65 &1439861379
 BoxCollider:
@@ -1985,10 +1988,12 @@ MonoBehaviour:
   AcornAntiGreenShader: {fileID: -6465566751694194690, guid: a94836163fd349f44932fea9412fe02f, type: 3}
   AcornBlueShader: {fileID: -6465566751694194690, guid: 269eba820a212614ba794b5f1c3905d2, type: 3}
   AcornAntiBlueShader: {fileID: -6465566751694194690, guid: 2c040921cf3b4cb4daaf514fa6117b46, type: 3}
+  antiXprefab: {fileID: 4079751068836375886, guid: 5252974abe1b4a644ba947a4a05b8a0d, type: 3}
   squirrels:
   - {fileID: 2117268403}
   - {fileID: 389520127}
   - {fileID: 1439861375}
+  gameState: 0
 --- !u!1 &2117268402 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ccd438e3ac3961c4da0a700e06f7a373, type: 3}
@@ -2014,6 +2019,7 @@ MonoBehaviour:
   acronHold: 0
   squirrelID: 123456
   score: 0
+  state: 0
   cpuControl: 0
 --- !u!65 &2117268407
 BoxCollider:

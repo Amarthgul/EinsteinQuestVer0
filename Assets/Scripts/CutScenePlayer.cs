@@ -19,7 +19,6 @@ namespace EinsteinQuest
             Debug.Log("In begin");
             cutscene.canvasRenderer.SetAlpha(0f);
             StartCoroutine(Play(0, 2));
-
         }
 
         public void End()

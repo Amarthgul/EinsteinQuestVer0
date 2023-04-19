@@ -27,7 +27,7 @@ namespace EinsteinQuest
             Debug.Log("end");
             backdrop.gameObject.SetActive(true);
             cutscene.gameObject.SetActive(true);
-            StartCoroutine(Play(0, Globals.Slides.Length - 1));
+            StartCoroutine(Play(3, Globals.Slides.Length - 1, false));
         }
          
         // Update is called once per frame
@@ -35,18 +35,18 @@ namespace EinsteinQuest
         {
         }
 
-        IEnumerator Play(int idx, int idxEnd)
+        IEnumerator Play(int idx, int idxEnd, bool one = true)
         {
             Debug.Log("Playing cutscene");
             var current = Globals.Slides[idx];
             cutscene.texture = (Texture2D)Resources.Load(current.path);
-            cutscene.CrossFadeAlpha(1, fadeTime, false);
+            if (one) { cutscene.CrossFadeAlpha(1, fadeTime, false); }
             yield return new WaitForSeconds(current.time);
-            cutscene.CrossFadeAlpha(0, fadeTime, false);
+            if (one) { cutscene.CrossFadeAlpha(0, fadeTime, false); }
             yield return new WaitForSeconds(fadeTime);
             if (idx < idxEnd)
             {
-                StartCoroutine(Play(idx+1, idxEnd));
+                StartCoroutine(Play(idx+1, idxEnd, one));
             } else
             {
                 if (firstFinished)

@@ -81,9 +81,28 @@ namespace EinsteinQuest
             /*("Cutscene/TestImages/blue", 2f),
             ("Cutscene/TestImages/green", 3f),
             ("Cutscene/TestImages/red", 4f)*/
+
             ("Cutscene/Controls", 3f),
             ("Cutscene/Acorn", 3f),
-            ("Cutscene/QuantAcorn", 3f)
+            ("Cutscene/QuantAcorn", 3f),
+            ("Cutscene/1", 3f),
+            ("Cutscene/2", 3f), //niels
+            ("Cutscene/3", 3f), //erwin
+            ("Cutscene/4", 1f), //albert
+            ("Cutscene/Tree1", 0.1f), //black
+            ("Cutscene/Tree2", 10f), //niels
+            ("Cutscene/Tree3", 0.1f), //.
+            ("Cutscene/Tree4", 0.1f), //..
+            ("Cutscene/Tree5", 0.1f), //...
+            ("Cutscene/Tree6", 7f), //treant
+            ("Cutscene/Tree7", 5f), //treant
+            ("Cutscene/Tree8", 10f), //treant
+            ("Cutscene/Tree9", 10f),
+            ("Cutscene/Tree10", 10f),
+            ("Cutscene/Tree11", 4f),
+            ("Cutscene/Tree12", 4f),
+            ("Cutscene/Tree13", 4f),
+            ("Cutscene/Tree14", 4f)
         };
 
         /// ================================================================================

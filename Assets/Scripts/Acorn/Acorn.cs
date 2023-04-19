@@ -115,12 +115,12 @@ namespace EinsteinQuest
             UpdateShader();
         }
         public void Consume(Squirrel squirrel) {
-            Debug.Log("consumeeeee");
             if(currentState < 0) {
                 // anti
                 if(squirrel.score > 0) {
                     squirrel.score -= 1;
                 }
+                squirrel.Anti();
             }
             else {
                 //normal acorn

@@ -5,6 +5,7 @@ public class SquirrelAcornTargetState : ICPUState {
     CPUMovementController squirrelCPU;
     Transform transform;
     GameObject targetAcorn;
+    Squirrel squirrel;
     public SquirrelAcornTargetState(CPUMovementController squirrelCPU, GameObject acorn) {
         Debug.Log("Acorn target state");
         this.squirrelCPU = squirrelCPU;
@@ -12,10 +13,15 @@ public class SquirrelAcornTargetState : ICPUState {
         this.obstacleVision = squirrelCPU.obstacleVision;
         this.acornVision = squirrelCPU.acornVision;
         this.targetAcorn = acorn;
+        this.squirrel = squirrelCPU.squirrel;
     }
 
     public void Move() {
-        transform.Translate(transform.forward * Globals.AISpeed.ACORN_MOVEMENT_SPEED * Time.deltaTime, Space.World);
+        float modifier = 1f;
+        if(squirrel.state == (int) Globals.SquirrelStates.ANTI) {
+            modifier = Globals.ANTI_PENALTY_SPEED_AI;
+        }
+        transform.Translate(transform.forward * modifier * Globals.AISpeed.ACORN_MOVEMENT_SPEED * Time.deltaTime, Space.World);
         Quaternion targetRotation = Quaternion.LookRotation(targetAcorn.transform.position - transform.position);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Globals.AISpeed.ACORN_TARGET_ROTATION_SPEED * Time.deltaTime);
         obstacleVision.FixRotation();

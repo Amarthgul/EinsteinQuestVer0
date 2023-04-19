@@ -9,8 +9,9 @@ public class CPUMovementController {
     public ICPUState state;
     public Transform transform;
     public Vision acornVision, obstacleVision;
+    private GameManager gm;
     public const string ACORN_TAG = "Acorn", OBSTACLE_TAG = "Obstacle";
-    public CPUMovementController(Squirrel squirrel, bool enabled) {
+    public CPUMovementController(GameManager gm, Squirrel squirrel, bool enabled) {
         this.squirrel = squirrel;
         this.player = squirrel.gameObject;
         this.transform = squirrel.transform;
@@ -18,6 +19,7 @@ public class CPUMovementController {
         InitializeVisionModules();
         this.state = new SquirrelAcornSearchState(this);
         this.visitedAcorns = new Dictionary<GameObject, float>();
+        this.gm = gm;
 
     }
     void InitializeVisionModules() {
@@ -33,6 +35,9 @@ public class CPUMovementController {
 
     public void Move()
     {
+        if(gm.gameState == (int) Globals.GameStates.STARTSCREEN) {
+            return;
+        }
         state.Move();
         
     }

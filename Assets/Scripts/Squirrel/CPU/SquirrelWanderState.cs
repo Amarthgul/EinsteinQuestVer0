@@ -7,6 +7,7 @@ public class SquirrelAcornSearchState : ICPUState
     Transform transform;
     private Quaternion targetRotation;
     private float time = 0f;
+    private Squirrel squirrel;
     public SquirrelAcornSearchState(CPUMovementController squirrelCPU) {
         this.squirrelCPU = squirrelCPU;
         this.transform = squirrelCPU.player.transform;
@@ -14,10 +15,15 @@ public class SquirrelAcornSearchState : ICPUState
         this.obstacleVision = squirrelCPU.obstacleVision;
         this.targetRotation = Quaternion.LookRotation(transform.forward, Vector3.up);
         this.time = 1f;
+        this.squirrel = squirrelCPU.squirrel;
     }
     public void Move()
     {
-        transform.Translate(transform.forward * Globals.AISpeed.WANDER_MOVEMENT_SPEED * Time.deltaTime, Space.World);
+        float modifier = 1f;
+        if(squirrel.state == (int) Globals.SquirrelStates.ANTI) {
+            modifier = Globals.ANTI_PENALTY_SPEED_AI;
+        }
+        transform.Translate(transform.forward * modifier * Globals.AISpeed.WANDER_MOVEMENT_SPEED * Time.deltaTime, Space.World);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Globals.AISpeed.WANDER_ROTATION_SPEED * Time.deltaTime);
         acornVision.FixRotation();
     }

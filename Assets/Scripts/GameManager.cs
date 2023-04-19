@@ -33,6 +33,9 @@ namespace EinsteinQuest
         [SerializeField] Shader AcornAntiGreenShader;
         [SerializeField] Shader AcornBlueShader;
         [SerializeField] Shader AcornAntiBlueShader;
+        [Header("Symbol that is displayed above squirrel")]
+        [Space(5)]
+        [SerializeField] GameObject antiXprefab;
 
         [Space(15)]
         [Header("Squirrels")]
@@ -47,6 +50,7 @@ namespace EinsteinQuest
         private List<Acorn> acorns = new List<Acorn>();
 
         private Dictionary<Globals.AcornStates, Shader> acornShaders = new Dictionary<Globals.AcornStates, Shader>();
+        public int gameState = (int) Globals.GameStates.STARTSCREEN;
 
         /// ===============================================================
         /// ========================== Methods ============================
@@ -200,8 +204,16 @@ namespace EinsteinQuest
             // No acorn is avilable to be interacted with 
             return false;
         }
-
-
-
+        public AntiX CreateAntiXToFollowSquirrel(Squirrel squirrel) {
+            Vector3 position = squirrel.transform.position;
+            GameObject newAntiX = Instantiate(
+                    antiXprefab, 
+                    new Vector3(position.x, position.y + 0.3f, position.z), 
+                    Quaternion.identity);
+            newAntiX.AddComponent<AntiX>();
+            AntiX antiXscript = newAntiX.GetComponent<AntiX>();
+            antiXscript.SetSquirrel(squirrel);
+            return antiXscript;
+        }
     }
 }

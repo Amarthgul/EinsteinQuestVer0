@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\QuitHandler.cs" />
      <Compile Include="Assets\Scripts\Squirrel\CPU\SquirrelObstacleAvoidanceState.cs" />
      <Compile Include="Assets\Scripts\Squirrel\Squirrel.cs" />
+     <Compile Include="Assets\Scripts\Acorn\AntiX.cs" />
      <None Include="Assets\Scripts\UI\Endgame.uxml" />
      <None Include="Assets\Scripts\UI\UILayout.uxml" />
      <None Include="Assets\Scripts\UI\Main Menu.uxml" />

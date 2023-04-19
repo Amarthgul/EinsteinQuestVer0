@@ -40,9 +40,9 @@ namespace EinsteinQuest
         [SerializeField] public Globals.Colors squirrelColor;
 
         public bool acronHold = false;
-        public int squirrelID = 123456;
-        public int score = 0; 
-
+        public int squirrelID = 123456, score = 0, state;
+        private float antiTimeRemaining;
+        private AntiX antiX;
         // CPU
         public bool cpuControl;
         public CPUMovementController cpuMovement;
@@ -53,7 +53,9 @@ namespace EinsteinQuest
         // Start is called before the first frame update
         void Start()
         {
-            cpuMovement = new CPUMovementController(this, cpuControl);
+            cpuMovement = new CPUMovementController(gm, this, cpuControl);
+            state = (int)Globals.SquirrelStates.NORMAL;
+            antiTimeRemaining = 3f;
         }
         public void MoveSquirrel(float x, float y) {
             if(!acronHold) {
@@ -71,12 +73,29 @@ namespace EinsteinQuest
                 gm.SquirrelInteractQuery(this, true);
             }
         }
+        // penalize this squirrel and make them slow for eating an anti acorn
+        public void Anti() {
+            antiTimeRemaining = 3f;
+            state = (int) Globals.SquirrelStates.ANTI;
+            Debug.Log("anti");
+            antiX = gm.CreateAntiXToFollowSquirrel(this);
+        }
 
         // Update is called once per frame
         void Update()
         {
             if(cpuControl) {
                 cpuMovement.Update();
+            }
+            if(state == (int) Globals.SquirrelStates.ANTI) {
+                if(antiTimeRemaining > 0f) {
+                    antiTimeRemaining -= Time.deltaTime;
+                }
+                else {
+                    state = (int) Globals.SquirrelStates.NORMAL;
+                    antiX.Destroy();
+                    Destroy(antiX);
+                }
             }
         }
 
@@ -102,8 +121,12 @@ namespace EinsteinQuest
         /// <param name="Z">Z axis input from joystick</param>
         private void UpdatePosition(float X, float Z)
         {
-            thisSquirrel.transform.Translate(new Vector3(X, 0, 0) * Time.deltaTime, Space.World);
-            thisSquirrel.transform.Translate(new Vector3(0, 0, Z) * Time.deltaTime, Space.World);
+            float modifier = 1f;
+            if(state == (int) Globals.SquirrelStates.ANTI) {
+                modifier = Globals.ANTI_PENALTY_SPEED_PLAYER;
+            }
+            thisSquirrel.transform.Translate(new Vector3(X*modifier, 0, 0) * Time.deltaTime, Space.World);
+            thisSquirrel.transform.Translate(new Vector3(0, 0, Z*modifier) * Time.deltaTime, Space.World);
         }
 
         /// <summary>
@@ -131,6 +154,7 @@ namespace EinsteinQuest
         public void TryStartGame() {
             if(!uiManager.started) {
                 uiManager.StartUI();
+                gm.gameState = (int) Globals.GameStates.QUANTUMFOREST;
             }
             if(acronHold) {
                 acronHold = gm.SquirrelInteractQuery(this, false);

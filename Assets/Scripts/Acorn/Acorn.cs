@@ -121,10 +121,12 @@ namespace EinsteinQuest
                     squirrel.score -= 1;
                 }
                 squirrel.Anti();
+                SoundManager.instance.AudioSource.PlayOneShot(SoundManager.instance.anti);
             }
             else {
                 //normal acorn
                 squirrel.score += 1;
+                SoundManager.instance.AudioSource.PlayOneShot(SoundManager.instance.consume);
             }
 
 

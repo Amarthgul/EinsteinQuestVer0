@@ -154,7 +154,6 @@ namespace EinsteinQuest
         public void TryStartGame() {
             if(!uiManager.started) {
                 uiManager.StartCutscene();
-                gm.gameState = (int) Globals.GameStates.QUANTUMFOREST;
             }
             if(acronHold) {
                 acronHold = gm.SquirrelInteractQuery(this, false);

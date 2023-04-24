@@ -34,6 +34,8 @@ namespace EinsteinQuest
             }
             if(totalAcorns == max)
             {
+                GameManager gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+                gm.gameState = (int) Globals.GameStates.STARTSCREEN;
                 gameDone = true;
             }
         }

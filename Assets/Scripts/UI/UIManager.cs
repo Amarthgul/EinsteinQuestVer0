@@ -53,6 +53,7 @@ namespace EinsteinQuest
             if (csp.firstFinished)
             {
                 StartUI();
+                gm.gameState = (int) Globals.GameStates.QUANTUMFOREST;
             }
             if (total.gameDone)
             {
@@ -60,6 +61,7 @@ namespace EinsteinQuest
                 if (csp.secondFinished)
                 {
                     endgame.enabled = true;
+                    gm.gameState = (int) Globals.GameStates.QUANTUMFOREST;
                     active.enabled = false;
                 } else if (!csp.secondStarted)
                 {

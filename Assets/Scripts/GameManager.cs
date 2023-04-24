@@ -180,7 +180,7 @@ namespace EinsteinQuest
                         a.Collapse(squirrel.squirrelColor);
                         a.observerID = squirrel.squirrelID;
                         a.pickUpProtection = true;
-
+                        SoundManager.instance.AudioSource.PlayOneShot(SoundManager.instance.acorn_pickup);
                         return true;
                     }
                     else if (a.pickUpProtection && a.observerID == squirrel.squirrelID)
@@ -195,7 +195,9 @@ namespace EinsteinQuest
                             ResetAcorn(a);
                             squirrel.acronHold = false;
                         }
-
+                        else {
+                            SoundManager.instance.AudioSource.PlayOneShot(SoundManager.instance.acorn_drop);
+                        }
                         return false;
                     }
                 }
